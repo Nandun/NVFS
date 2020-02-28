@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>NVFS Material Donations Page</title>
+  <title>NVFS In-Kind Donations Page</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -40,13 +40,13 @@
   <!--==========================
     Header
   ============================-->
-    <header id="header">
+   <header id="header">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
         <h1><a href="#intro" class="scrollto">NVFS</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>
+        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -66,13 +66,13 @@
           </li>
           <li class="menu-has-children"><a href="">Donate</a>
             <ul>
-              <li><a href="DonationI.html">Monetary</a></li>
-              <li><a href="Donation.html">In-Kind</a></li>
+              <li><a href="Donation.html">Monetary</a></li>
+              <li><a href="DonationI.html">In-Kind</a></li>
             </ul>
           </li>
           <li class="menu-active"><a href="Volunteer.html">Volunteer</a></li>
-          <li class="menu-active"><a href="#intro">About</a></li>
-          <li class="menu-active"><a href="#intro">Contact</a></li>
+          <li class="menu-active"><a href="#">About</a></li>
+          <li class="menu-active"><a href="#">Contact</a></li>
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
@@ -90,8 +90,10 @@
         </header>
 
 <div class="form">
+<!--
           <div id="sendmessage">Your payment has been processed. Thank you!</div>
           <div id="errormessage">There is an error. Please check all fields again.</div>
+-->
           <form action="" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -136,13 +138,21 @@
               </div>
             </div>
 			<div class="form-group col-md-6">
-			<label>Donation Type</label>
-             <select id = "myList">
+			<label>Donation Type: </label>
+             <select id = "donationType">
                <option value = "1">Clothing</option>
                <option value = "2">Food</option>
                <option value = "3">Furniture</option>
                <option value = "4">Toys</option>
+			   <option value = "5">Other</option>
              </select>
+			</div>
+			<div class="form-group col-md-6">
+			<label>How do you want to donate it? : </label>
+             <select id = "locationChoice">
+               <option value = "1">Drop Off</option>
+               <option value = "2">Pick Up</option>
+			   </select>
 			</div>
             <div class="form-group">
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
