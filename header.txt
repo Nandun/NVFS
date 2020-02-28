@@ -1,0 +1,36 @@
+ <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">NVFS</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="index.html">Home</a></li>
+          <li class="menu-has-children"><a href="Resources.html">Resources</a>
+            <ul>
+              <li><a href="#">Early Childhood Development</a></li>
+              <li><a href="#">Foster Care and Adoption</a></li>
+              <li><a href="#">Health and Well-Being</a></li>
+              <li><a href="#">Homelessness and Housing</a></li>
+              <li><a href="#">Immigration Services</a></li>
+              <li><a href="#">Mental Health</a></li>
+              <li><a href="#">Workforce Development</a></li>
+              <li><a href="#">Youth Initiatives</a></li>
+            </ul>
+          </li>
+          <li class="menu-has-children"><a href="">Donate</a>
+            <ul>
+              <li><a href="DonationI.html">Monetary</a></li>
+              <li><a href="Donation.html">In-Kind</a></li>
+            </ul>
+          </li>
+          <li class="menu-active"><a href="Volunteer.html">Volunteer</a></li>
+          <li class="menu-active"><a href="#intro">About</a></li>
+          <li class="menu-active"><a href="#intro">Contact</a></li>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
