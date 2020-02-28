@@ -40,7 +40,7 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header">
+   <header id="header">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
@@ -51,7 +51,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li class="menu-active"><a href="index.html">Home</a></li>
           <li class="menu-has-children"><a href="Resources.html">Resources</a>
             <ul>
               <li><a href="#">Early Childhood Development</a></li>
@@ -66,11 +66,11 @@
           </li>
           <li class="menu-has-children"><a href="">Donate</a>
             <ul>
-              <li><a href="#">Monetary</a></li>
-              <li><a href="#">In-Kind</a></li>
+              <li><a href="DonationI.html">Monetary</a></li>
+              <li><a href="Donation.html">In-Kind</a></li>
             </ul>
           </li>
-          <li class="menu-active"><a href="#intro">Volunteer</a></li>
+          <li class="menu-active"><a href="Volunteer.html">Volunteer</a></li>
           <li class="menu-active"><a href="#intro">About</a></li>
           <li class="menu-active"><a href="#intro">Contact</a></li>
       </nav><!-- #nav-menu-container -->
@@ -95,39 +95,39 @@
           <form action="" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="First Name" data-rule="minlen:2" data-msg="Please enter a first name" />
+                <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" data-rule="minlen:2" data-msg="Please enter a first name" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Last Name" data-rule="minlen:2" data-msg="Please enter a last name" />
+                <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" data-rule="minlen:2" data-msg="Please enter a last name" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Company Name (optional)" data-rule="minlen:2" data-msg="Please enter a company name" />
+                <input type="text" name="compName" class="form-control" id="compName" placeholder="Company Name (optional)" data-rule="minlen:2" data-msg="Please enter a company name" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Country" data-rule="minlen:2" data-msg="Please enter a country" />
+                <input type="text" name="country" class="form-control" id="country" placeholder="Country" data-rule="minlen:2" data-msg="Please enter a country" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Street address" data-rule="minlen:4" data-msg="Please enter a valid street adsdress" />
+                <input type="text" name="address" class="form-control" id="address" placeholder="Street address" data-rule="minlen:4" data-msg="Please enter a valid street adsdress" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="City" data-rule="minlen:2" data-msg="Please enter a valid city" />
+                <input type="text" name="city" class="form-control" id="city" placeholder="City" data-rule="minlen:2" data-msg="Please enter a valid city" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="State" data-rule="minlen:2" data-msg="Please enter a valid state" />
+                <input type="text" name="state" class="form-control" id="state" placeholder="State" data-rule="minlen:2" data-msg="Please enter a valid state" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Zip Code" data-rule="minlen:5" data-msg="Please enter a valid zip code" />
+                <input type="text" name="zipcode" class="form-control" id="zipcode" placeholder="Zip Code" data-rule="minlen:5" data-msg="Please enter a valid zip code" />
                 <div class="validation"></div>
               </div>
 			  <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Phone" data-rule="minlen:10" data-msg="Please enter a valid phone number" />
+                <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone (ex): 0123456789" data-rule="minlen:10" data-msg="Please enter a valid phone number" />
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
@@ -135,6 +135,15 @@
                 <div class="validation"></div>
               </div>
             </div>
+			<div class="form-group col-md-6">
+			<label>Donation Type</label>
+             <select id = "myList">
+               <option value = "1">Clothing</option>
+               <option value = "2">Food</option>
+               <option value = "3">Furniture</option>
+               <option value = "4">Toys</option>
+             </select>
+			</div>
             <div class="form-group">
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
               <div class="validation"></div>
