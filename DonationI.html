@@ -40,7 +40,7 @@
   <!--==========================
     Header
   ============================-->
-   <header id="header">
+    <header id="header">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
@@ -90,10 +90,8 @@
         </header>
 
 <div class="form">
-<!--
           <div id="sendmessage">Your payment has been processed. Thank you!</div>
           <div id="errormessage">There is an error. Please check all fields again.</div>
--->
           <form action="" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -138,21 +136,13 @@
               </div>
             </div>
 			<div class="form-group col-md-6">
-			<label>Donation Type: </label>
-             <select id = "donationType">
+			<label>Donation Type</label>
+             <select id = "myList">
                <option value = "1">Clothing</option>
                <option value = "2">Food</option>
                <option value = "3">Furniture</option>
                <option value = "4">Toys</option>
-			   <option value = "5">Other</option>
              </select>
-			</div>
-			<div class="form-group col-md-6">
-			<label>How do you want to donate it? : </label>
-             <select id = "locationChoice">
-               <option value = "1">Drop Off</option>
-               <option value = "2">Pick Up</option>
-			   </select>
 			</div>
             <div class="form-group">
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
