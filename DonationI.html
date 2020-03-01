@@ -94,6 +94,13 @@
           <div id="sendmessage">Your payment has been processed. Thank you!</div>
           <div id="errormessage">There is an error. Please check all fields again.</div>
 -->
+	<script>
+	function check()
+		{
+			document.getElementById("finish").innerHTML = (document.myform.fname.value) + " " 
+			+ (document.myform.lname.value);
+		}
+	</script>
           <form action="inkind2.html" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -158,11 +165,13 @@
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit">Submit</button></div>
+            <div class="text-center"><button type="submit" onclick="check(); return false">Submit</button></div>
           </form>
 		  
         </div>
-		
+	
+	      <p id="finish"></p>
+	      
         </div>
 		
       </div>
