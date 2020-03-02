@@ -100,6 +100,21 @@
 			document.getElementById("finish").innerHTML = "Thank you so much for your donation! This donation is bg sent to NVFS and " + 
 				"once it is done being verified, you will be contacted again to confirm the donation. Thank you so much for  donating!";
 		}
+		
+	function sendEmail() 
+	{
+		Email.send({
+		Host: "smtp.gmail.com",
+		Username : "tempemailtest321@gmail.com",
+		Password : "!Test123456",
+		To : 'tempemailtest321@gmail.com',
+		From : "tempemailtest321@gmail.com",
+		Subject : "This is a test",
+		Body : "This is a test",
+		}).then(
+			message => alert("mail sent successfully")
+		);
+	}
 	</script>
           <form action="" name="myform" method="post" role="form" class="contactForm">
             <div class="form-row">
@@ -166,7 +181,7 @@
               <div class="validation"></div>
             </div>
 		  <div><p id="finish"></p></div>
-            <div class="text-center"><button type="submit" onclick="check(); return false">Submit</button></div>
+            <div class="text-center"><button type="submit" onclick="check(); sendEmail(); return false">Submit</button></div>
           </form>
 		  
         </div>
@@ -233,7 +248,6 @@
 
   <!-- Email Script Source-->
   <script src="https://smtpjs.com/v3/smtp.js"></script>  
-  <script src="index.js"></script>
 
 </body>
 </html>
