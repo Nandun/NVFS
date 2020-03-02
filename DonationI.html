@@ -120,8 +120,7 @@
 			"<br> Phone Number: " + (document.myform.phone.value) + 
 			"<br> Donation Type: " + (document.myform.donationType.value) +
 			"<br> Location Choice: " + (document.myform.locationChoice.value) + 
-			"<br> Description: " + (document.myform.description.value)
-			,
+			"<br> Description: " + (document.myform.description.value),
 		}).then(
 			message => alert("mail sent successfully")
 		);
@@ -188,7 +187,7 @@
 			   </select>
 			</div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
+              <textarea class="form-control" name="message" id="description" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
               <div class="validation"></div>
             </div>
 		  <div><p id="finish"></p></div>
