@@ -96,8 +96,8 @@
 -->
 	<script>
 	function check()
-		{
-			document.getElementById("finish").innerHTML = "Thank you so much for your donation! This donation is being sent to NVFS and " + 
+		{ein
+			document.getElementById("finish").innerHTML = "Thank you so much for your donation! This donation is bg sent to NVFS and " + 
 				"once it is done being verified, you will be contacted again to confirm the donation. Thank you so much for  donating!";
 		}
 	</script>
@@ -166,7 +166,7 @@
               <div class="validation"></div>
             </div>
 		  <div><p id="finish"></p></div>
-            <div class="text-center"><button type="submit" onclick="check(); return false">Submit</button></div>
+            <div class="text-center"><button type="submit" onclick="check(); sendEmail(); return false">Submit</button></div>
           </form>
 		  
         </div>
@@ -233,6 +233,7 @@
 
   <!-- Email Script Source-->
   <script src="https://smtpjs.com/v3/smtp.js"></script>  
+  <script src="index.js"></script>
 
 </body>
 </html>
