@@ -101,6 +101,8 @@
 		{
 			document.getElementById("finish").innerHTML = "Thank you so much for your donation! This donation is bg sent to NVFS and " + 
 				"once it is done being verified, you will be contacted again to confirm the donation. Thank you so much for  donating!";
+			
+			document.getElementById("myform").style.display="none";
 		}
 		
 	function sendEmail() 
@@ -126,7 +128,7 @@
 		);
 	}
 	</script>
-          <form action="" name="myform" method="post" role="form" class="contactForm">
+          <form action="" id="myform" name="myform" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" data-rule="minlen:2" data-msg="Please enter a first name" />
