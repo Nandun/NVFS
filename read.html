@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/ionic.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+            $.getJSON(url, function(result) {
+                console.log(result);
+                $.each(result, function(i, field) {
+                    var FirstName = field.FirstName;
+                    var LastName = field.LastName;
+                    var Address = field.Address;
+                    var Phone = field.Phone;
+                    $("#listview").append("<a class='item' href='form.html?id=" + FirstName + "&title=" + LastName + "&duration=" + Address + "&price=" + Phone + "'><span class='item-note'>$" + price + "</span><h2>" + title + " </h2><p>" + duration + "</p></a>");
+                });
+            });
+        });
+    </script>
+	<script>
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+    document.getElementById("demo").innerHTML = myObj.name;
+  }
+};
+xmlhttp.open("GET", "demo_file.php", true);
+xmlhttp.send();
+</script>
+</head>
+
+
+<body>
+    <div class="bar bar-header bar-positive" style="margin-bottom:80px; ">
+        <a href="index.html" class="button button-clear">Home</a>
+        <h1 class="title">Read Database (JSON)</h1>
+    </div><br /><br />
+    <ul class="list" id="listview">
+    </ul>
+</body>
+
+</html>
