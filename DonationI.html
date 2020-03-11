@@ -109,8 +109,8 @@
 		
 	function displayForm()
 		{
-			document.getElementById("myform").style.display="block";
 			document.getElementById("firstForm").style.display="none";
+			document.getElementById("myform").style.display="block";
 		}
 		
 	function sendDatabase()
@@ -145,7 +145,7 @@
 		<div>
 			This is a test to see if this page works and it takes me to another page.
 		</div>
-	<div class="text-center"><button type="submit" onclick="displayForm(); return false">Display Form</button></div>
+	<div class="text-center"><button type="submit" onclick="displayForm();">Display Form</button></div>
 	</form>
           <form action="" id="myform" name="myform" method="post" role="form" class="contactForm" style="display: none;">
             <div class="form-row">
