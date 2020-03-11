@@ -109,7 +109,7 @@
 		
 	function displayForm()
 		{
-			document.getElementById("firstForm").style.display="none";
+			document.getElementById("firstScreen").style.display="none";
 			document.getElementById("myform").style.display="block";
 		}
 		
@@ -141,12 +141,17 @@
 		);
 	}
 	</script>
-	<form name="firstForm">
-		<div>
-			This is a test to see if this page works and it takes me to another page.
-		</div>
-	<div class="text-center"><button type="submit" onclick="displayForm();">Display Form</button></div>
-	</form>
+	
+	<div name="firstScreen" id="firstScreen">
+		<p>
+		Hello! This is the NVFS In-Kind Donation page. If you are trying to make a donation that is small or you would like
+		like to drop it off, please contact NVFS through email or call-in, or even come by to our thrift shop and drop it 
+		off there. However, if you have a large donation you would like to donate or you are considering on doing a 
+		fundraiser please select the large donation/fundraiser button to display the form to fill out.
+		</p>
+		<button type="button" onclick="displayForm();">Display Form</button>
+	</div>
+
           <form action="" id="myform" name="myform" method="post" role="form" class="contactForm" style="display: none;">
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -211,7 +216,7 @@
               <textarea class="form-control" name="message" id="description" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit" onclick="sendEmail(); check(); return false">Submit</button></div>
+            <div class="text-center"><button type="submit" onclick="check(); return false">Submit</button></div>
           </form>
 	
 	    <div><p id="finish"></p></div>  
