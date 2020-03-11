@@ -115,6 +115,8 @@
 		{
 			document.getElementById("firstScreen").style.display="none";
 			document.getElementById("myform").style.display="block";
+			document.body.scrollTop = 0;
+ 		 	document.documentElement.scrollTop = 0;
 		}
 		
 	function sendDatabase()
@@ -122,11 +124,6 @@
 			return false;
 		}
 		
-	function topFunction() 
-		{
- 	 		document.body.scrollTop = 0;
- 		 	document.documentElement.scrollTop = 0;
-		}
 		
 	function sendEmail() 
 	{
@@ -291,7 +288,7 @@
               <textarea class="form-control" name="message" id="description" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit" id="insert" onclick="topFunction(); check(); return false">Submit</button></div>
+            <div class="text-center"><button type="submit" id="insert" onclick="check(); return false">Submit</button></div>
           </form>
 	
 	    <div><p id="finish"></p></div>  
