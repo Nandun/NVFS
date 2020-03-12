@@ -227,9 +227,11 @@
 		var Phone = $("#Phone").val();
 		var Email = $("#Email").val();
 		var Location = $("#dropdown").val();
+		var Type = $("#donationType").val();
+		var Description = $("#description").val();
 		
 		//this variable is so that the app can submit the fields to the server
-                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street + "&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone + "&Email=" + Email + "&Location=" + Location + "&insert=";
+                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street + "&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone + "&Email=" + Email + "&Location=" + Location + "$Type=" + Type + "$Description=" + Description + ""&insert=";
                 
 				if ($.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
                     $.ajax({
@@ -296,7 +298,7 @@
             </div>
 			<div class="form-group col-md-6">
 			<label>Donation Type: </label>
-             <select id = "donationType">
+             <select id = "donationType" name="donationType">
                <option value = "Food">Food</option>
                <option value = "Clothing">Clothing</option>
                <option value = "Household Items">Household Items</option>
@@ -311,7 +313,7 @@
              </select>
 	</div>
             <div class="form-group">
-              <textarea class="form-control" name="message" id="description" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
+              <textarea class="form-control" name="description" id="description" rows="5" data-rule="required" data-msg="" placeholder="Description" required></textarea>
               <div class="validation"></div>
             </div>
             <div class="text-center"><button type="submit" id="insert" onclick="check(); return false">Submit</button></div>
