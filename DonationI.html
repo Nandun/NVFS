@@ -228,7 +228,7 @@
 		    
                 var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street +"&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone +"&Email=" + Email + "&insert=";
                 
-				if ($.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(CompanyName).length > 0 & $.trim(Street).length > 0 & $.trim(City).length > 0 & $.trim(ZipCode).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
+				if ($('select[name="dropdown"]').val() == 2 & $.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(CompanyName).length > 0 & $.trim(Street).length > 0 & $.trim(City).length > 0 & $.trim(ZipCode).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
                     $.ajax({
                         type: "POST",
                         url: "https://nvfsserver.azurewebsites.net/donateSQL.php",
@@ -248,6 +248,24 @@
                         }
                     });
                 }
+		    else if ($('select[name="dropdown"]').val() == 3 & $.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(CompanyName).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "https://nvfsserver.azurewebsites.net/donateSQL.php",
+                        data: dataString,
+                        crossDomain: true,
+                        cache: false,
+                        beforeSend: function() {
+                            $("#insert").val('Connecting...');
+                        },
+                        success: function(data) {
+                            if (data == "success") {
+                                //alert("inserted");
+                                $("#insert").val('submit');
+                            } else if (data == "error") {
+                                alert("error");
+                            }
+                        }
                 return false;
             });
         });
