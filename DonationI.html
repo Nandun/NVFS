@@ -111,27 +111,6 @@
 			document.getElementById("myform").style.display="none";
 		}
 		
-			$('select[name="dropdown"]').change(function(){
-				if ($(this).val() == "2")
-				{
-					document.getElementById("myform").style.display="block";
-					document.getElementById("stree").style.display="none";
-					document.getElementById("cit").style.display="none";
-					document.getElementById("stat").style.display="none";
-					document.getElementById("zip").style.display="none";
-					document.body.scrollTop = 0;
- 		 			document.documentElement.scrollTop = 0;
-				}
-				else if($(this).val() == "3")
-				{
-					document.getElementById("myform").style.display="block";
-					document.body.scrollTop = 0;
- 		 			document.documentElement.scrollTop = 0;
-				}
-					
-			});
-
-		
 	function displayForm()
 		{
 			document.getElementById("firstScreen").style.display="none";
@@ -209,6 +188,27 @@
 			      <option value="3">Pick Up</option>
 		      </select>
 	      </div>
+	      <script>
+		      $('select[name="dropdown"]').change(function(){
+				if ($(this).val() == "2")
+				{
+					document.getElementById("myform").style.display="block";
+					document.getElementById("stree").style.display="none";
+					document.getElementById("cit").style.display="none";
+					document.getElementById("stat").style.display="none";
+					document.getElementById("zip").style.display="none";
+					document.body.scrollTop = 0;
+ 		 			document.documentElement.scrollTop = 0;
+				}
+				else if($(this).val() == "3")
+				{
+					document.getElementById("myform").style.display="block";
+					document.body.scrollTop = 0;
+ 		 			document.documentElement.scrollTop = 0;
+				}
+					
+			});
+	      </script>
           <script type="text/javascript">
         $(document).ready(function() {
             $("#insert").click(function() {
