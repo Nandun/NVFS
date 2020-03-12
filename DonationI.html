@@ -183,16 +183,16 @@
 		Thank you for donating a large amount! There are two options for donating. You can Drop Off your donation or you can
 		have it Picked Up. Please select which way you will be donating.
 		<br>
-		      <select name="dropdown" size=1>
+		      <select name="dropdown" id="dropdown" size=1>
 			      <option value="1">---</option>
-			      <option value="2">Drop Off</option>
-			      <option value="3">Pick Up</option>
+			      <option value="Drop Off">Drop Off</option>
+			      <option value="Pick Up">Pick Up</option>
 		      </select>
 		      <br>
 	      </div>
 	      <script>
 		      $('select[name="dropdown"]').change(function(){
-				if ($(this).val() == "2")
+				if ($(this).val() == "Drop Off")
 				{
 					document.getElementById("myform").style.display="block";
 					document.getElementById("stree").style.display="none";
@@ -202,7 +202,7 @@
 					document.body.scrollTop = 0;
  		 			document.documentElement.scrollTop = 0;
 				}
-				else if($(this).val() == "3")
+				else if($(this).val() == "Pick Up")
 				{
 					document.getElementById("myform").style.display="block";
 					document.getElementById("stree").style.display="block";
@@ -226,8 +226,9 @@
 		var ZipCode = $("#ZipCode").val();
 		var Phone = $("#Phone").val();
 		var Email = $("#Email").val();
+		var Location = $("#dropdown").val();
 		    
-                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street +"&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone +"&Email=" + Email + "&insert=";
+                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street + "&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone + "&Email=" + Email + "&Location=" + Location + "&insert=";
                 
 				if ($.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
                     $.ajax({
