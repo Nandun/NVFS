@@ -231,7 +231,7 @@
 		var Description = $("#description").val();
 		
 		//this variable is so that the app can submit the fields to the server
-                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street + "&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone + "&Email=" + Email + "&Location=" + Location + "&Type=" + Type + "&Description=" + Description + ""&insert=";
+                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street + "&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone + "&Email=" + Email + "&Location=" + Location + "&Type=" + Type + "&Description=" + Description + "&insert=";
                 
 				if ($.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
                     $.ajax({
