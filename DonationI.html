@@ -111,10 +111,8 @@
 			document.getElementById("myform").style.display="none";
 		}
 		
-	function dropDown()
-		{
 			$('select[name="dropdown"]').change(function(){
-				if ($(this).val() ="2")
+				if ($(this).val() == "2")
 				{
 					document.getElementById("myform").style.display="block";
 					document.getElementById("stree").style.display="none";
@@ -124,7 +122,7 @@
 					document.body.scrollTop = 0;
  		 			document.documentElement.scrollTop = 0;
 				}
-				else if($(this).val() ="3")
+				else if($(this).val() == "3")
 				{
 					document.getElementById("myform").style.display="block";
 					document.body.scrollTop = 0;
@@ -132,7 +130,7 @@
 				}
 					
 			});
-		}
+
 		
 	function displayForm()
 		{
@@ -202,7 +200,7 @@
 		<button type="button" onclick="displayForm();">Donation Form</button>
 	</div>
 
-	      <div name="dropdownDiv" style="display: none;">
+	      <div name="dropdownDiv" id="dropdownDiv" style="display: none;">
 		Thank you for donating a large amount! There are two options for donating. You can Drop Off your donation or you can
 		have it Picked Up. Please select which way you will be donating.
 		      <select name="dropdown" size=1>
