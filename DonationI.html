@@ -111,12 +111,33 @@
 			document.getElementById("myform").style.display="none";
 		}
 		
+	function dropDown()
+		{
+			$('select[name="dropdown"]').change(function(){
+				if ($(this).val() ="2")
+				{
+					document.getElementById("myform").style.display="block";
+					document.getElementById("stree").style.display="none";
+					document.getElementById("cit").style.display="none";
+					document.getElementById("stat").style.display="none";
+					document.getElementById("zip").style.display="none";
+					document.body.scrollTop = 0;
+ 		 			document.documentElement.scrollTop = 0;
+				}
+				else if($(this).val() ="3")
+				{
+					document.getElementById("myform").style.display="block";
+					document.body.scrollTop = 0;
+ 		 			document.documentElement.scrollTop = 0;
+				}
+					
+			});
+		}
+		
 	function displayForm()
 		{
 			document.getElementById("firstScreen").style.display="none";
-			document.getElementById("myform").style.display="block";
-			document.body.scrollTop = 0;
- 		 	document.documentElement.scrollTop = 0;
+			document.getElementById("dropdown").style.display="block";
 		}
 		
 	function sendDatabase()
@@ -187,21 +208,30 @@
 		<button type="button" onclick="displayForm();">Donation Form</button>
 	</div>
 
+	      <div name="dropdown" style="display: none;">
+		Thank you for donating a large amount! There are two options for donating. You can Drop Off your donation or you can
+		have it Picked Up. Please select which way you will be donating.
+		      <select name="dropdown" size=1>
+			      <option value="1">---</option>
+			      <option value="2">Drop Off</option>
+			      <option value="3">Pick Up</option>
+		      </select>
+	      </div>
           <script type="text/javascript">
         $(document).ready(function() {
             $("#insert").click(function() {
                 var FirstName = $("#FirstName").val();
                 var LastName = $("#LastName").val();
                 var CompanyName = $("#CompanyName").val();
-				var Country = $("#Country").val();
-				var Street = $("#Street").val();
-				var City = $("#City").val();
-				var ZipCode = $("#ZipCode").val();
-				var Phone = $("#Phone").val();
-				var Email = $("#Email").val();
-                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Country=" + Country +"&Street=" + Street +"&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone +"&Email=" + Email + "&insert=";
+		var Street = $("#Street").val();
+		var City = $("#City").val();
+		var ZipCode = $("#ZipCode").val();
+		var Phone = $("#Phone").val();
+		var Email = $("#Email").val();
+		    
+                var dataString = "FirstName=" + FirstName + "&LastName=" + LastName + "&CompanyName=" + CompanyName +"&Street=" + Street +"&City=" + City + "&ZipCode=" + ZipCode +"&Phone=" + Phone +"&Email=" + Email + "&insert=";
                 
-				if ($.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(CompanyName).length > 0 & $.trim(Country).length > 0 & $.trim(Street).length > 0 & $.trim(City).length > 0 & $.trim(ZipCode).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
+				if ($.trim(FirstName).length > 0 & $.trim(LastName).length > 0 & $.trim(CompanyName).length > 0 & $.trim(Street).length > 0 & $.trim(City).length > 0 & $.trim(ZipCode).length > 0 & $.trim(Phone).length > 0 & $.trim(Email).length > 0) {
                     $.ajax({
                         type: "POST",
                         url: "https://nvfsserver.azurewebsites.net/donateSQL.php",
@@ -227,43 +257,39 @@
     </script>
           <form action="" id="myform" name="myform" method="post" role="form" class="contactForm" style="display: none;">
             <div class="form-row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-6" name="firstN">
                 <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="First Name" data-rule="minlen:2" data-msg="Please enter a first name" />
                 <div class="validation"></div>
               </div>
-			  <div class="form-group col-md-6">
+			  <div class="form-group col-md-6" name="lastN">
                 <input type="text" name="LastName" class="form-control" id="LastName" placeholder="Last Name" data-rule="minlen:2" data-msg="Please enter a last name" />
                 <div class="validation"></div>
               </div>
-			  <div class="form-group col-md-6">
+			  <div class="form-group col-md-6" name="cName">
                 <input type="text" name="CompanyName" class="form-control" id="CompanyName" placeholder="Company Name (optional)" data-rule="minlen:2" data-msg="Please enter a company name" />
                 <div class="validation"></div>
               </div>
-			  <div class="form-group col-md-6">
-                <input type="text" name="Country" class="form-control" id="Country" placeholder="Country" data-rule="minlen:2" data-msg="Please enter a country" />
-                <div class="validation"></div>
-              </div>
-			  <div class="form-group col-md-6">
+			  <div class="form-group col-md-6" name="stree">
                 <input type="text" name="Street" class="form-control" id="Street" placeholder="Street address" data-rule="minlen:4" data-msg="Please enter a valid street adsdress" />
                 <div class="validation"></div>
               </div>
-			  <div class="form-group col-md-6">
+			  <div class="form-group col-md-6" name="cit">
                 <input type="text" name="City" class="form-control" id="City" placeholder="City" data-rule="minlen:2" data-msg="Please enter a valid city" />
                 <div class="validation"></div>
               </div>
-			  <div class="form-group col-md-6">
+			  <div class="form-group col-md-6" name="stat">
                 <input type="text" name="State" class="form-control" id="State" placeholder="State" data-rule="minlen:2" data-msg="Please enter a valid state" />
                 <div class="validation"></div>
               </div>
-			  <div class="form-group col-md-6">
+			  <div class="form-group col-md-6" name="zip">
                 <input type="text" name="ZipCode" class="form-control" id="ZipCode" placeholder="Zip Code" data-rule="minlen:5" data-msg="Please enter a valid zip code" />
                 <div class="validation"></div>
               </div>
-			  <div class="form-group col-md-6">
+			  <div class="form-group col-md-6" name="phoneN">
                 <input type="text" name="Phone" class="form-control" id="Phone" placeholder="Phone (ex): 0123456789" data-rule="minlen:10" data-msg="Please enter a valid phone number" />
                 <div class="validation"></div>
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-6" name="emai">
                 <input type="email" class="form-control" name="Email" id="Email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validation"></div>
               </div>
@@ -283,14 +309,7 @@
 	       <option value = "Sports Equipment">Sports Equipment</option>
 	       <option value = "Other">Other</option>
              </select>
-			</div>
-			<div class="form-group col-md-6">
-			<label>How do you want to donate it? : </label>
-             <select id = "locationChoice">
-               <option value = "Drop Off">Drop Off</option>
-               <option value = "Pick Up">Pick Up</option>
-			   </select>
-			</div>
+	</div>
             <div class="form-group">
               <textarea class="form-control" name="message" id="description" rows="5" data-rule="required" data-msg="" placeholder="Description"></textarea>
               <div class="validation"></div>
