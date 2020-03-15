@@ -184,15 +184,13 @@
 		Thank you for donating a large amount! There are two options for donating. You can Drop Off your donation or you can
 		have it Picked Up. Please select which way you will be donating.
 		<br> <br>
-		      <input type="radio" id="Drop Off" name="Drop Off" value="Drop Off">
-		      <label for="Drop Off">Drop Off</label> &nbsp;
-	      	      <input type="radio" id="Pick Up" name="Pick Up" value="Pick Up">
-		      <label for="Pick Up">Pick Up</label> </br> <br>
+		      <button type="button" name="Drop Off" onclick="displayDropOff();">Drop Off</button>
+		      <button type="button" name="Pick Up" onclick="displayPickUp();">Pick Up</button>
 	      </div>
 	      <script>
-		      $('select[name="Drop Off"]').change(function(){
-				if ($(this).val() == "Drop Off")
+				function displayDropOff()
 				{
+					displayForm();
 					document.getElementById("myform").style.display="block";
 					document.getElementById("stree").style.display="none";
 					document.getElementById("cit").style.display="none";
@@ -201,13 +199,9 @@
 					document.body.scrollTop = 0;
  		 			document.documentElement.scrollTop = 0;
 				}
-				else 
+				function displayPickUp()
 				{
-					document.getElementById("myform").style.display="block";
-					document.getElementById("stree").style.display="block";
-					document.getElementById("cit").style.display="block";
-					document.getElementById("stat").style.display="block";
-					document.getElementById("zip").style.display="block";
+					displayForm();
 					document.body.scrollTop = 0;
  		 			document.documentElement.scrollTop = 0;
 				}
