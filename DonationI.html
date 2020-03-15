@@ -104,6 +104,7 @@
 -->
 	<script>
 	//This is the thank you screen when the form is submitted.
+		var loc = "";
 	function check()
 		{
 			document.getElementById("finish").innerHTML = "Thank you so much for your donation! This donation was sent to NVFS and " + 
@@ -118,7 +119,32 @@
 			document.getElementById("firstScreen").style.display="none";
 			document.getElementById("dropdownDiv").style.display="block";
 		}
+		
+	function displayDropOff()
+		{
+			document.getElementById("myform").style.display="block";
+			document.getElementById("stree").style.display="none";
+			document.getElementById("cit").style.display="none";
+			document.getElementById("stat").style.display="none";
+			document.getElementById("zip").style.display="none";
+			document.body.scrollTop = 0;
+ 		 	document.documentElement.scrollTop = 0;
+			var loc = "Drop Off";
 			
+		}
+		
+	function displayPickUp()
+		{
+			document.getElementById("myform").style.display="block";
+			document.getElementById("stree").style.display="block";
+			document.getElementById("cit").style.display="block";
+			document.getElementById("stat").style.display="block";
+			document.getElementById("zip").style.display="block";
+			document.body.scrollTop = 0;
+ 		 	document.documentElement.scrollTop = 0;
+			var loc = "Pick Up";
+		}
+		
 	/*function sendEmail() 
 	{
 		Email.send({
@@ -184,29 +210,11 @@
 		Thank you for donating a large amount! There are two options for donating. You can Drop Off your donation or you can
 		have it Picked Up. Please select which way you will be donating.
 		<br> <br>
-		      <button type="button" name="Drop Off" onclick="displayDropOff();">Drop Off</button>
-		      <button type="button" name="Pick Up" onclick="displayPickUp();">Pick Up</button>
+		      <button type="button" onclick="displayDropOff();">Drop Off</button>
+		      <button type="button" onclick="displayPickUp();">Pick Up</button>
 	      </div>
 	      <script>
-				function displayDropOff()
-				{
-					displayForm();
-					document.getElementById("myform").style.display="block";
-					document.getElementById("stree").style.display="none";
-					document.getElementById("cit").style.display="none";
-					document.getElementById("stat").style.display="none";
-					document.getElementById("zip").style.display="none";
-					document.body.scrollTop = 0;
- 		 			document.documentElement.scrollTop = 0;
-				}
-				function displayPickUp()
-				{
-					displayForm();
-					document.body.scrollTop = 0;
- 		 			document.documentElement.scrollTop = 0;
-				}
-					
-			});
+				
 	      </script>
           <script type="text/javascript">
         $(document).ready(function() {
@@ -219,7 +227,7 @@
 		var ZipCode = $("#ZipCode").val();
 		var Phone = $("#Phone").val();
 		var Email = $("#Email").val();
-		    if ($("#Drop Off").val() == "Drop Off")
+		    if (loc == "Drop Off")
 		    {
 			var Location = "Drop Off";
 		    }
