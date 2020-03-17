@@ -16,9 +16,7 @@ body {
 }
 
 a {
-  border:3px;
-  border-style:solid;
-  border-color:#FF0000;
+  text-shadow: 2px 2px #ff0000;
   color: #00A1A4;
   transition: 0.5s;
 }
