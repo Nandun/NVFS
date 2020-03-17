@@ -16,7 +16,10 @@ body {
 }
 
 a {
-  color: #3933ff;
+  border:3px;
+  border-style:solid;
+  border-color:#FF0000;
+  color: #00A1A4;
   transition: 0.5s;
 }
 
