@@ -305,39 +305,90 @@ h6 {
   color: #00A1A4;
 }
 
-/* Social Media Icons General */
-.fa {
-  padding: 10px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
+/* Social Media General */
+.social-buttons{
+  display:inline-block;
+  background: rgba(256,256,256,0.5);
+  padding:20px;
+  padding-bottom: 5px;
+  border-radius:10px;
+  text-align:center;
+  margin:20px 10px;
+  box-shadow: 0px 0px 32px -7px #00199f;
+}
+  
+/* Helper class to divide the icons */
+.social-margin {
+  margin-right: 15px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
   text-decoration: none;
-  border-radius: 50%;
-  margin: 10px;
 }
 
-/* Social Media Icon Hover */
-.fa:hover {
-  opacity: 0.7;
+.social-icon {
+  margin-bottom: 15px;
+   box-sizing: border-box;
+  -moz-border-radius: 138px;
+  -webkit-border-radius: 138px;
+  border-radius: 138px;
+  border: 5px solid;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  line-height: 1px;
+  padding-top: 11px;
+  transition: all 0.5s;
 }
+.social-icon:hover {
+    transform: rotate(360deg)scale(1.3);
+  }
+  /* Facebook Button Styling */
+ .facebook {
+    font-size: 22px;
+    padding-top: 9px;
+    border-color: #3b5998;
+    background-color: #3b5998;
+    color: #ffffff;
+   
+  }
+  .facebook:hover {
+    background-color: #ffffff;
+    color: #3b5998;
+  }
+  /* Twitter Button Styling */
+.twitter {
+    font-size: 22px;
+    padding-top: 10px;
+    padding-left: 2px;
+    border-color: #55acee;
+    background-color: #55acee;
+    color: #ffffff;
+    
+  }
+  .twitter:hover {
+    background-color: #ffffff;
+    color: #55acee;
+  }
 
-/* Facebook Icon */
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-/* Twitter Icon */
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-/*YouTube Icon */
-.fa-youtube {
-  background: #ff0000;
-  color: white;
-}
+  /* Youtube Button Styling */
+ .youtube {
+    font-size: 22px;
+    padding-top: 9px;
+    padding-left: 0px;
+    background-color: #bb0000;
+    color: #ffffff;
+    border-color: #bb0000;
+    
+  }
+  .youtube  :hover {
+    background-color: #ffffff;
+    color: #bb0000;
+  }
 
 /*Embedded YouTube Videos*/
 
