@@ -43,6 +43,29 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	
+	<script type="text/javascript"> 
+	$(document).ready(function() { 
+	var url = "https://nvfsserver.azurewebsites.net/sqlTest.php"; 
+	$.getJSON(url, function(result) { 
+	console.log(result); 
+	$.each(result, function(i, field) { 
+	if(i != 0){return true;} 
+	
+
+	document.getElementById("Phone1").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone1; 
+	document.getElementById("Phone1").setAttribute("href",strLink); 
+	 
+	}); 
+	}); 
+	});
+	</script>
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -163,7 +186,8 @@
               <h3><center>Legal Hotline</center></h3>
               <font color="white">
 			  
-				<a href="tel:5717482806">571.748.2806</a><br><br>
+				<a id="Phone1" href="#"></a><br><br>
+				
 		  
                 Se habla español<br><br>
 				
