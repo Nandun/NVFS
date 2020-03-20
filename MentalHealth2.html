@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mental Health</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+	
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+  
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+    var url = "https://nvfsserver.azurewebsites.net/sqlTest.php"; 
+    $.getJSON(url, function(result) {
+        console.log(result);
+        $.each(result, function(i, field) {
+            if(i != 0){return true;}
+
+            //document.getElementById('d1').innerHTML = field.Desc1; 
+            //document.getElementById("d2").innerHTML = field.Desc2; 
+            //document.getElementById("d3").innerHTML = field.Desc3; 
+
+            //document.getElementById("Name1").innerHTML = field.Name1; 
+            document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
+            document.getElementById("Email1").setAttribute("href",strLink); 
+            document.getElementById("Phone1").innerHTML = field.Phone1; var strLink = "tel:" + field.Phone1;
+            document.getElementById("Phone1").setAttribute("href",strLink); 
+            //document.getElementById("AddL1").innerHTML = field.AddL1; 
+            //document.getElementById("AddL2").innerHTML = field.AddL2; 
+        });
+    });
+    </script>
+   
+</head>
+
+<body>
+
+    <!--==========================
+      Header
+    ============================-->
+    <header id="header">
+        <div class="container-fluid">
+  
+        <div id="logo" class="pull-left">
+          <a href="index.html"><img src="img/nvfs.png" alt="" title="" /></a>
+        </div>
+  
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li class="menu-active"><a href="index.html">Home</a></li>
+        <li class="menu-active"><a href="Resources.html">Resources</a></li>
+            <li class="menu-has-children"><a href="Services.html">Services</a>
+              <ul>
+                <li><a href="EarlyChildhoodDev.html">Early Childhood Development</a></li>
+                <li><a href="FosterCare.html">Foster Care and Adoption</a></li>
+                <li><a href="HealthAndWellBeing.html">Health and Well-Being</a></li>
+                <li><a href="HomelessnessAndHousing.html">Homelessness and Housing</a></li>
+                <li><a href="ImmigrationLegalService.html">Immigration Legal Services</a></li>
+                <li><a href="MentalHealth.html">Mental Health</a></li>
+                <li><a href="WorkforceDevelopment.html">Workforce Development</a></li>
+                <li><a href="youth_initiatives.html">Youth Initiatives</a></li>
+              </ul>
+            </li>
+            <li class="menu-has-children"><a href="#"> Donate</a>
+              <ul>
+                <li><a href="Donation.html">Monetary</a></li>
+                <li><a href="DonationI.html">In-Kind</a></li>
+              </ul>
+            </li>
+            <li class="menu-active"><a href="Volunteer.html">Volunteer</a></li>
+            <li class="menu-active"><a href="About.html">About</a></li>
+            <li class="menu-active"><a href="Contact.html">Contact</a></li>
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </header><!-- #header -->  
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <main id="main">
+
+    <!--==========================
+      Featured Services Section
+    ============================-->
+
+    <!--==========================
+      About Us Section
+    ============================-->
+
+    <!--==========================
+      Mental Health Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+        <header class="section-header wow fadeInUp">
+          <h3>Mental Health</h3>
+          <h4><center>CULTURALLY COMPETENT MENTAL HEALTH SERVICES TO ADDRESS VARYING NEEDS</center></h4>
+          <p>Sound mental health provides a critical foundation from which our neighbors can build their lives around. Mental health and stability can be compromised as a result of trauma, poverty, chronic stress and other tremendous challenges posed by cultural adjustment, homelessness or exposure to violence.
+          </br></br> NVFS provides culturally competent, language-specific mental health services for all ages in various settings to ensure neighbors from all backgrounds have access to the support they need. Services are provided at NVFS offices and integrated into home, school and community settings, and include individual, family and group counseling, and mental health treatment and evaluation. These services are tailored to meet the developmental, cultural, language and relational needs of the client and their family system.</p>
+
+          <div class="img">
+            <img src="img/mental-health.jpg" alt="" class="img-fluid">
+          </div>
+
+          <section id="call-to-action" class="wow fadeIn">
+            <div class="container text-center">
+              <h3><center>Contact</center></h3>
+              <font color="white"><a id="Email1" href="#"></a><a id="Phone1" href="#"></a></p></font>
+              <a class="cta-btn" href="https://www.nvfs.org/get-assistance/">Get Assistance</a>
+            </div>
+          </section>
+
+        </br>
+          <h4>Site-Based Services</h4>
+          <a href="https://www.nvfs.org/about-nvfs/locations/multicultural-center/">Multicultural Center</a><br>
+          <a href="https://www.nvfs.org/our-services/homelessness-housing/serve-campus/">SERVE Mental Health</a><br>
+          <a href="https://www.nvfs.org/our-services/early-childhood-development/">Early Childhood Mental Health</a><br>
+          <a href="https://www.nvfs.org/our-services/workforce-development/training-futures/">Training Futures</a><br><br>
+          <h4>Home Visiting/Neighborhood-Based Services</h4>
+          <a href="https://www.nvfs.org/our-services/youth-initiatives/">Violence Prevention and Intervention Program (VPIP)</a><br>
+          <a href="https://www.nvfs.org/our-services/early-childhood-development/healthy-families/">Perinatal Maternal Mental Health Project</a><br>
+          <a href="https://www.nvfs.org/our-services/youth-initiatives/">Family Reunification Program Trauma Mental Health Services</a><br>
+        </header>
+      </div>
+    </section><!-- #services -->
+
+  </main>
+
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
