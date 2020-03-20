@@ -29,11 +29,8 @@
 
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="js/jquery.js"></script>
-	
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
   <!-- =======================================================
@@ -42,7 +39,7 @@
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
-  
+
   <script type="text/javascript">
 
     $(document).ready(function() {
@@ -50,7 +47,7 @@
     $.getJSON(url, function(result) {
         console.log(result);
         $.each(result, function(i, field) {
-            if(i != 0){return true;}
+           // if(i != 0){return true;}
 
             //document.getElementById('d1').innerHTML = field.Desc1; 
             //document.getElementById("d2").innerHTML = field.Desc2; 
@@ -65,7 +62,8 @@
             //document.getElementById("AddL2").innerHTML = field.AddL2; 
         });
     });
-    </script>
+});
+</script>
    
 </head>
 
@@ -126,8 +124,10 @@
     <!--==========================
       Mental Health Section
     ============================-->
-<br><br>
+    <br>
+    <br>
     <section id="services">
+
       <div class="container">
         <header class="section-header wow fadeInUp">
           <h3>Mental Health</h3>
@@ -142,7 +142,8 @@
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Contact</center></h3>
-              <font color="white"><a id="Email1" href="#"></a><a id="Phone1" href="#"></a></p></font>
+              <font color="white"><a id = "Email1" href="#"></a><div id="Phone1"></div></font><br><br>
+                
               <a class="cta-btn" href="https://www.nvfs.org/get-assistance/">Get Assistance</a>
             </div>
           </section>
