@@ -2,72 +2,7 @@
 <html lang="en">
 <head>
 
-<script type="text/javascript">
 
-    $(document).ready(function() {
-    var url = "https://nvfsserver.azurewebsites.net/sqlTest.php"; 
-    $.getJSON(url, function(result) {
-        console.log(result);
-        $.each(result, function(i, field) {
-            if(i != 0){return true;}
-            document.getElementById('d1').innerHTML = field.Desc1; 
-            document.getElementById("d2").innerHTML = field.Desc2; 
-            document.getElementById("d3").innerHTML = field.Desc3; 
-
-            document.getElementById("Name1").innerHTML = field.Name1; 
-            document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
-            document.getElementById("Email1").setAttribute("href",strLink); 
-            document.getElementById("Phone1").innerHTML = field.Phone1; var strLink = "tel:" + field.Phone1;
-            document.getElementById("Phone1").setAttribute("href",strLink); 
-            document.getElementById("AddL1").innerHTML = field.AddL1; 
-            document.getElementById("AddL2").innerHTML = field.AddL2; 
-
-            document.getElementById("Name2").innerHTML = field.Name2; 
-            document.getElementById("Phone2").innerHTML = field.Phone2; var strLink = "tel:" + field.Phone2;
-            document.getElementById("Phone2").setAttribute("href",strLink); 
-            document.getElementById("Email2").innerHTML = field.Email2; var strLink2 = "mailto:" + field.Email2; 
-            document.getElementById("Email2").setAttribute("href",strLink2); 
-            document.getElementById("Add2L1").innerHTML = field.Add2L1; 
-            document.getElementById("Add2L2").innerHTML = field.Add2L2; 
-            document.getElementById("Add2L3").innerHTML = field.Add2L3; });
-
-            document.getElementById("Name3").innerHTML = field.Name3; 
-            document.getElementById("Phone3").innerHTML = field.Phone3; var strLink = "tel:" + field.Phone3;
-            document.getElementById("Phone3").setAttribute("href",strLink); 
-            document.getElementById("Email3").innerHTML = field.Email3; var strLink3 = "mailto:" + field.Email3; 
-            document.getElementById("Email3").setAttribute("href",strLink3); 
-            document.getElementById("Add3L1").innerHTML = field.Add3L1; 
-            document.getElementById("Add3L2").innerHTML = field.Add3L2; 
-            document.getElementById("Add3L3").innerHTML = field.Add3L3; });
-
-            document.getElementById("Name4").innerHTML = field.Name4; 
-            document.getElementById("Phone4").innerHTML = field.Phone4; var strLink = "tel:" + field.Phone4;
-            document.getElementById("Phone4").setAttribute("href",strLink); 
-            document.getElementById("Email4").innerHTML = field.Email4; var strLink4 = "mailto:" + field.Email4; 
-            document.getElementById("Email4").setAttribute("href",strLink4); 
-            document.getElementById("Add4L1").innerHTML = field.Add4L1; 
-            document.getElementById("Add4L2").innerHTML = field.Add4L2; 
-            document.getElementById("Add4L3").innerHTML = field.Add4L3;
-
-            document.getElementById("Name5").innerHTML = field.Name5; 
-            document.getElementById("Phone5").innerHTML = field.Phone5; var strLink = "tel:" + field.Phone5;
-            document.getElementById("Phone5").setAttribute("href",strLink); 
-            document.getElementById("Email5").innerHTML = field.Email5; var strLink5 = "mailto:" + field.Email5; 
-            document.getElementById("Email5").setAttribute("href",strLink5); 
-            document.getElementById("Add5L1").innerHTML = field.Add5L1; 
-            document.getElementById("Add5L2").innerHTML = field.Add5L2; 
-            document.getElementById("Add5L3").innerHTML = field.Add5L3;
-
-            document.getElementById("Name6").innerHTML = field.Name6; 
-            document.getElementById("Phone6").innerHTML = field.Phone6; var strLink = "tel:" + field.Phone6;
-            document.getElementById("Phone6").setAttribute("href",strLink); 
-            document.getElementById("Email6").innerHTML = field.Email6; var strLink6 = "mailto:" + field.Email6; 
-            document.getElementById("Email6").setAttribute("href",strLink6); 
-            document.getElementById("Add6L1").innerHTML = field.Add6L1; 
-            document.getElementById("Add6L2").innerHTML = field.Add6L2; 
-            document.getElementById("Add6L3").innerHTML = field.Add6L3;
-        });
-    </script>
 
   <meta charset="utf-8">
   <title>Health Access Cont.</title>
@@ -94,7 +29,47 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
+	<script type="text/javascript"> 
+		$(document).ready(function() { 
+		var url = "https://nvfsserver.azurewebsites.net/sqlTest.php"; 
+		$.getJSON(url, function(result) { 
+		console.log(result); 
+		$.each(result, function(i, field) { 
+		if(i != 0){return true;} 
+		
+	
+	document.getElementById("Phone1").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone1; 
+	document.getElementById("Phone1").setAttribute("href",strLink); 
+	
+	document.getElementById("Phone2").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone2; 
+	document.getElementById("Phone2").setAttribute("href",strLink);
+	
+	document.getElementById("Phone3").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone3; 
+	document.getElementById("Phone3").setAttribute("href",strLink);
+	
+	document.getElementById("Phone4").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone4; 
+	document.getElementById("Phone4").setAttribute("href",strLink);
+	
+	document.getElementById("Phone5").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone5; 
+	document.getElementById("Phone5").setAttribute("href",strLink);
+	
+
+		 
+		}); 
+		}); 
+		});
+	</script>
  
 </head>
 
