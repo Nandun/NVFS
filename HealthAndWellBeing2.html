@@ -26,6 +26,37 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+	<script type="text/javascript"> 
+		$(document).ready(function() { 
+		var url = "https://nvfsserver.azurewebsites.net/sqlTest.php"; 
+		$.getJSON(url, function(result) { 
+		console.log(result); 
+		$.each(result, function(i, field) { 
+		if(i != 0){return true;} 
+		
+	
+ 
+	document.getElementById("Email1").innerHTML = field.Email1; 
+	var strLink = "mailto:" + field.Email1; 
+	document.getElementById("Email1").setAttribute("href",strLink); 
+	document.getElementById("Phone1").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone1; 
+	document.getElementById("Phone1").setAttribute("href",strLink); 
+
+
+	
+
+		 
+		}); 
+		}); 
+		});
+	</script>
 
 </head>
 
@@ -131,9 +162,10 @@
 			  
                 NVFS Headquarters<br><br>
 				
-		      Email: <a href="mailto:info@nvfs.org">info@nvfs.org</a><br><br>
+		      Email: <a id="Email1" href="#" ></a>
+			  <br><br>
 			  
-			  Phone: <a href="tel:5717482500">571.748.2500</a>
+			  Phone: <a id="Phone1" href="#"></a> 
               </font>
             </div>
           </section>
