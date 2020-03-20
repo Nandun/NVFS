@@ -41,40 +41,9 @@
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
-<style>
-div {
-margin:0;
-padding:0;
-}
-</style>
 
 
-   <script type="text/javascript">
-	
-        $(document).ready(function() {
-            var url = "https://nvfsserver.azurewebsites.net/sqlTest.php";
-            $.getJSON(url, function(result) {
-                console.log(result);
-                $.each(result, function(i, field) {
-					document.getElementById("d1").innerHTML = field.Desc1;
-					document.getElementById("d2").innerHTML = field.Desc2;
-					document.getElementById("d3").innerHTML = field.Desc3;
-                    document.getElementById("Name1").innerHTML = field.Name1;
-                    document.getElementById("Email1").innerHTML = field.Email1;
-                    document.getElementById("Phone1").innerHTML = field.Phone1;
-                    document.getElementById("AddL1").innerHTML = field.AddL1;
-                    document.getElementById("AddL2").innerHTML = field.AddL2;
-                    document.getElementById("AddL3").innerHTML = field.AddL3;
-                    document.getElementById("Name2").innerHTML = field.Name1;
-                    document.getElementById("Email2").innerHTML = field.Email2;
-                    document.getElementById("Phone3").innerHTML = field.Phone3;
-                    document.getElementById("Add2L1").innerHTML = field.Add2L1;
-                    document.getElementById("Add2L2").innerHTML = field.Add2L2;
-                    document.getElementById("Add2L3").innerHTML = field.Add2L3;
-                });
-            });
-        });
-    </script>
+
   </head>
 
 <body>
@@ -88,14 +57,13 @@ padding:0;
       <div id="logo" class="pull-left">
         <h1><a href="#intro" class="scrollto">NVFS</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+        <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.html">Home</a></li>
-	  <li class="menu-active"><a href="Resources.html">Resources</a></li>
-          <li class="menu-has-children"><a href="Services.html">Services</a>
+          <li class="menu-has-children"><a href="Resources.html">Resources</a>
             <ul>
               <li><a href="#">Early Childhood Development</a></li>
               <li><a href="#">Foster Care and Adoption</a></li>
@@ -148,7 +116,7 @@ padding:0;
 
 
           <div class="img">
-            <img src="img/workforce.jpg" alt="" class="img-fluid">
+            <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/work1.jpg" class="img-fluid">
           </div>
 
           <section id="call-to-action" class="wow fadeIn">
@@ -156,9 +124,9 @@ padding:0;
               <h3><center>Training Futures</center></h3>
               <strong><font color="white"><div id="Name1"></div></font></strong><br>
               <font color="white">Program Manager</font><br><br>
-              <font color="white"><a id = "Email1" href="mailto:jhalowich@nvfs.org"></a>/<div id="Phone1"></div></font><br><br>
-		    <a href="tel:<div id="Phone1"></div>"><div id="Phone1"></div></a>
-              <font color="white">8603 Westwood Center Dr. <br> Suite 300 <br> Vienna, VA 22182</font><br>
+              <font color="white"><a id="Email1" href="#" ></a><br><a id="Phone1" href="#"></a></font>
+              <font color="white"><div id="AddL1"></div><div id="AddL2"></div><br>  <br><div id="AddL3"></div></font><br>
+			  
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/training-futures/">Additional Information</a>
             </div>
           </section>
@@ -172,10 +140,10 @@ padding:0;
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Vehicles for Change</center></h3>
-              <strong><font color="white">Zoraida Tapia</font></strong><br>
+              <strong><font color="white"><div id="Name2"></div></font></strong><br>
               <font color="white">Housing Counselor II</font><br><br>
-              <font color="white"><a href="mailto:ztapia@nvfs.org">ztapia@nvfs.org</a> / (571)748-2561</font><br><br>
-              <font color="white">10455 White Granite Dr. <br> Suite 100 <br> Oakton, VA 22124</font><br>
+              <font color="white"><a id="Email2" href="#"></a><div id="Phone2"></div></font>
+              <font color="white"><div id="Add2L1"></div><div id="Add2L2"></div><br>  <br><div id="Add2L3"></div></font><br>
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/vehicles-for-change/">Additional Information</a>
             </div>
           </section>
@@ -238,4 +206,40 @@ padding:0;
   <script src="js/main.js"></script>
 
 </body>
+
+   <script type="text/javascript">
+	
+        $(document).ready(function() {
+            var url = "https://nvfsserver.azurewebsites.net/sqlTest.php";
+            $.getJSON(url, function(result) {
+                console.log(result);
+                $.each(result, function(i, field) {
+				if(i != 0){return true;}
+				
+					document.getElementById('d1').innerHTML = field.Desc1;
+					document.getElementById("d2").innerHTML = field.Desc2;
+					document.getElementById("d3").innerHTML = field.Desc3;
+                    document.getElementById("Name1").innerHTML = field.Name1;
+                    document.getElementById("Email1").innerHTML = field.Email1;
+					var strLink = "mailto:" + field.Email1;
+					document.getElementById("Email1").setAttribute("href",strLink);
+                    document.getElementById("Phone1").innerHTML = field.Phone1;
+					var strLink = "tel:" + field.Phone1;
+					document.getElementById("Phone1").setAttribute("href",strLink);
+                    document.getElementById("AddL1").innerHTML = field.AddL1;
+					document.getElementById("AddL2").innerHTML = field.AddL2;
+                    document.getElementById("Name2").innerHTML = field.Name2;
+                    document.getElementById("Phone2").innerHTML = field.Phone2;
+					var strLink = "tel:" + field.Phone2;
+					document.getElementById("Phone2").setAttribute("href",strLink);
+                    document.getElementById("Email2").innerHTML = field.Email2;
+					var strLink2 = "mailto:" + field.Email2;
+					document.getElementById("Email2").setAttribute("href",strLink2);
+                    document.getElementById("Add2L1").innerHTML = field.Add2L1;
+                    document.getElementById("Add2L2").innerHTML = field.Add2L2;
+                    document.getElementById("Add2L3").innerHTML = field.Add2L3;
+                });
+            });
+        });
+    </script>
 </html>
