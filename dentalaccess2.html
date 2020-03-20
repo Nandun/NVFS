@@ -1,6 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+		<script type="text/javascript">
+
+    $(document).ready(function() {
+    var url = "https://nvfsserver.azurewebsites.net/sqlTest.php"; 
+    $.getJSON(url, function(result) {
+        console.log(result);
+        $.each(result, function(i, field) {
+            if(i != 0){return true;}
+            document.getElementById('d1').innerHTML = field.Desc1; 
+            document.getElementById("d2").innerHTML = field.Desc2; 
+            document.getElementById("d3").innerHTML = field.Desc3; 
+
+            document.getElementById("Name1").innerHTML = field.Name1; 
+            document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
+            document.getElementById("Email1").setAttribute("href",strLink); 
+            document.getElementById("Phone1").innerHTML = field.Phone1; var strLink = "tel:" + field.Phone1;
+            document.getElementById("Phone1").setAttribute("href",strLink); 
+            document.getElementById("AddL1").innerHTML = field.AddL1; 
+            document.getElementById("AddL2").innerHTML = field.AddL2; 
+
+            document.getElementById("Name2").innerHTML = field.Name2; 
+            document.getElementById("Phone2").innerHTML = field.Phone2; var strLink = "tel:" + field.Phone2;
+            document.getElementById("Phone2").setAttribute("href",strLink); 
+            document.getElementById("Email2").innerHTML = field.Email2; var strLink2 = "mailto:" + field.Email2; 
+            document.getElementById("Email2").setAttribute("href",strLink2); 
+            document.getElementById("Add2L1").innerHTML = field.Add2L1; 
+            document.getElementById("Add2L2").innerHTML = field.Add2L2; 
+            document.getElementById("Add2L3").innerHTML = field.Add2L3; });
+
+            document.getElementById("Name3").innerHTML = field.Name3; 
+            document.getElementById("Phone3").innerHTML = field.Phone3; var strLink = "tel:" + field.Phone3;
+            document.getElementById("Phone3").setAttribute("href",strLink); 
+            document.getElementById("Email3").innerHTML = field.Email3; var strLink3 = "mailto:" + field.Email3; 
+            document.getElementById("Email3").setAttribute("href",strLink3); 
+            document.getElementById("Add3L1").innerHTML = field.Add3L1; 
+            document.getElementById("Add3L2").innerHTML = field.Add3L2; 
+            document.getElementById("Add3L3").innerHTML = field.Add3L3; });
+
+            document.getElementById("Name4").innerHTML = field.Name4; 
+            document.getElementById("Phone4").innerHTML = field.Phone4; var strLink = "tel:" + field.Phone4;
+            document.getElementById("Phone4").setAttribute("href",strLink); 
+            document.getElementById("Email4").innerHTML = field.Email4; var strLink4 = "mailto:" + field.Email4; 
+            document.getElementById("Email4").setAttribute("href",strLink4); 
+            document.getElementById("Add4L1").innerHTML = field.Add4L1; 
+            document.getElementById("Add4L2").innerHTML = field.Add4L2; 
+            document.getElementById("Add4L3").innerHTML = field.Add4L3;
+
+            document.getElementById("Name5").innerHTML = field.Name5; 
+            document.getElementById("Phone5").innerHTML = field.Phone5; var strLink = "tel:" + field.Phone5;
+            document.getElementById("Phone5").setAttribute("href",strLink); 
+            document.getElementById("Email5").innerHTML = field.Email5; var strLink5 = "mailto:" + field.Email5; 
+            document.getElementById("Email5").setAttribute("href",strLink5); 
+            document.getElementById("Add5L1").innerHTML = field.Add5L1; 
+            document.getElementById("Add5L2").innerHTML = field.Add5L2; 
+            document.getElementById("Add5L3").innerHTML = field.Add5L3;
+
+            document.getElementById("Name6").innerHTML = field.Name6; 
+            document.getElementById("Phone6").innerHTML = field.Phone6; var strLink = "tel:" + field.Phone6;
+            document.getElementById("Phone6").setAttribute("href",strLink); 
+            document.getElementById("Email6").innerHTML = field.Email6; var strLink6 = "mailto:" + field.Email6; 
+            document.getElementById("Email6").setAttribute("href",strLink6); 
+            document.getElementById("Add6L1").innerHTML = field.Add6L1; 
+            document.getElementById("Add6L2").innerHTML = field.Add6L2; 
+            document.getElementById("Add6L3").innerHTML = field.Add6L3;
+        });
+    </script>
+
+
   <meta charset="utf-8">
   <title>Dental Access Cont.</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -111,9 +180,21 @@
 			<p id="d1">NVFS can help you and your family get access to reduced-cost dental services at a private dental office or clinic. We provide referrals in Prince William County and Fairfax County. Please note that NVFS only gives referrals to dental offices and clinics, and we do not provide dental services at any of our offices.
 			</p>
 			
-		
-			
+		<strong>Fairfax County Residents</strong><br>
+		<p>Eligibility<br>
+		(1) Household income 200 percent or less of Federal Poverty Level.<br>
+		(2) No dental insurance.<br>
+		(3) 18 years or older.<br>
+		(4) Verifiable home address in Fairfax County, with the exception of the following areas for Northern Virginia Dental Clinic referrals: Falls Church, Falls Church City, Annandale, Alexandria, or Fairfax City ( we are not the referring agency for these communities for Northern Virginia Dental Clinic)
+		</p>	
         
+		<strong>Prince William Residents</strong><br>
+		<p>Eligibility<br>
+		(1)Household income 200 percent or less of Federal Poverty Level<br>
+		(2)Verifiable home address in county of application<br>
+		(3)No dental insurance
+		
+		
 		<div class="img">
             <img src="img/dentalaccess.jpg" alt="" class="img-fluid">
           </div>
@@ -124,20 +205,22 @@
              <h3><center>Contact</center></h3>
               <font color="white">
 				
-				<strong>Fairfax County Residents</strong><br>
-				<a href="tel:571.748.2593">571.748.2593</a><br>
+				
+				<strong><font color="white"><div id="Name1"></div></font></strong><br>
+				<a id="Phone1" href="#"><br></a>
 				Office Hours: 9am - 12pm<br>
 				Mondays, Wednesdays & Fridays<br><br>
-			  
-			  <strong>Prince William County Residents</strong><br>
-				<a href="tel:571.748.2635">571.748.2635</a><br>
+				
+			  <strong><font color="white"><div id="Name2"></div></font></strong><br>
+				<a id="Phone2" href="#"><br></a>
 				Office Hours: 9am - 5pm<br>
 				Monday through Friday<br><br>
 				
+				<strong><font color="white"><div id="Name3"></div></font></strong><br>
                 <strong>Loudoun County residents:</strong><br>
 				NVFS does not provide dental access services in Loudoun County. Please call the county intake line at
 				<br>
-				<a href="tel:703.771.5851">703.771.5851</a>
+				<a id="Phone3" href="#"><br></a>
 				<br><br>
 				
               <h3><center>Emergency Service</center></h3>  
