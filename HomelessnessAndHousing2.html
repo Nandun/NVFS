@@ -26,6 +26,38 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	
+	<script type="text/javascript"> 
+	$(document).ready(function() { 
+	var url = "https://nvfsserver.azurewebsites.net/sqlTest.php"; 
+	$.getJSON(url, function(result) { 
+	console.log(result); 
+	$.each(result, function(i, field) { 
+	if(i != 0){return true;} 
+	
+	document.getElementById("Name1").innerHTML = field.Name1; 
+	document.getElementById("Phone1").innerHTML = field.Phone1; 
+	var strLink = "tel:" + field.Phone1; 
+	document.getElementById("Phone1").setAttribute("href",strLink);
+	
+	document.getElementById("Name2").innerHTML = field.Name2; 
+	document.getElementById("Phone2").innerHTML = field.Phone2; 
+	var strLink = "tel:" + field.Phone2; 
+	document.getElementById("Phone2").setAttribute("href",strLink);
+	document.getElementById("Email2").innerHTML = field.Email2; 
+	var strLink = "mailto:" + field.Email2; 
+	document.getElementById("Email2").setAttribute("href",strLink); 
+		 
+	}); 
+	}); 
+	});
+	</script>
+  
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -131,12 +163,13 @@
               <font color="white">
 				<em>Shelter, Housing, Rent, Utilities</em><br><br>
 				
-                <strong>Fairfax County</strong><br>
-				<a href="tel:7032220880">703.222.0880</a><br><br>
 				
-				<strong>Prince William County</strong><br>
-				<a href="tel:703792.3366">703.792.3366</a> /  
-				<a id = "Email1" href="mailto:CE@pwcgov.org">CE@pwcgov.org</a>
+				<strong><font color="white"><div id="Name1"></div></font></strong>         
+				<a id="Phone1" href="#"></a><br><br>
+				
+				<strong><font color="white"><div id="Name2"></div></font></strong>
+				<a id="Phone2" href="#"></a> /  <a id="Email2" href="#" ></a>
+				
               </font>
             </div>
           </section>
