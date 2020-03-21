@@ -24,8 +24,14 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+ <!-- Main Stylesheet File -->
+ <link href="css/style.css" rel="stylesheet">
+
+ <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <script type="text/javascript" src="js/jquery.js"></script>
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -41,9 +47,9 @@
         console.log(result);
         $.each(result, function(i, field) {
             if(i != 0){return true;}
-            document.getElementById('d1').innerHTML = field.Desc1; 
-            document.getElementById("d2").innerHTML = field.Desc2; 
-            document.getElementById("d3").innerHTML = field.Desc3; 
+            //document.getElementById('d1').innerHTML = field.Desc1; 
+            //document.getElementById("d2").innerHTML = field.Desc2; 
+            //document.getElementById("d3").innerHTML = field.Desc3; 
 
             document.getElementById("Name1").innerHTML = field.Name1; 
             document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
@@ -52,6 +58,8 @@
             document.getElementById("Phone1").setAttribute("href",strLink); 
             document.getElementById("AddL1").innerHTML = field.AddL1; 
             document.getElementById("AddL2").innerHTML = field.AddL2; 
+            document.getElementById("AddL3").innerHTML = field.AddL3; 
+            document.getElementById("Title1").innerHTML = field.Title1;
 
             document.getElementById("Name2").innerHTML = field.Name2; 
             document.getElementById("Phone2").innerHTML = field.Phone2; var strLink = "tel:" + field.Phone2;
@@ -60,19 +68,21 @@
             document.getElementById("Email2").setAttribute("href",strLink2); 
             document.getElementById("Add2L1").innerHTML = field.Add2L1; 
             document.getElementById("Add2L2").innerHTML = field.Add2L2; 
-            document.getElementById("Add2L3").innerHTML = field.Add2L3; });
-
+            document.getElementById("Add2L3").innerHTML = field.Add2L3;
+            document.getElementById("Title2").innerHTML = field.Title2;
+        
             document.getElementById("Name3").innerHTML = field.Name3; 
             document.getElementById("Phone3").innerHTML = field.Phone3; var strLink = "tel:" + field.Phone3;
             document.getElementById("Phone3").setAttribute("href",strLink); 
             document.getElementById("Email3").innerHTML = field.Email3; var strLink3 = "mailto:" + field.Email3; 
             document.getElementById("Email3").setAttribute("href",strLink3); 
-            document.getElementById("Add3L1").innerHTML = field.Add3L1; 
-            document.getElementById("Add3L2").innerHTML = field.Add3L2; 
-            document.getElementById("Add3L3").innerHTML = field.Add3L3; });
+            //document.getElementById("Add3L1").innerHTML = field.Add3L1; 
+            //document.getElementById("Add3L2").innerHTML = field.Add3L2; 
+            //document.getElementById("Add3L3").innerHTML = field.Add3L3; 
         });
     });
-    </script>
+});
+</script>
 </head>
 
 <body>
@@ -80,7 +90,7 @@
   <!--==========================
     Header
   ============================-->
-   <header id="header">
+  <header id="header">
     <div class="container-fluid">
 
     <div id="logo" class="pull-left">
@@ -90,7 +100,7 @@
     <nav id="nav-menu-container">
       <ul class="nav-menu">
         <li class="menu-active"><a href="index.html">Home</a></li>
-  <li class="menu-active"><a href="Resources.html">Resources</a></li>
+    <li class="menu-active"><a href="Resources.html">Resources</a></li>
         <li class="menu-has-children"><a href="Services.html">Services</a>
           <ul>
             <li><a href="EarlyChildhoodDev.html">Early Childhood Development</a></li>
@@ -116,6 +126,7 @@
   </div>
 </header><!-- #header -->
 
+
   <!--==========================
     Intro Section
   ============================-->
@@ -130,7 +141,7 @@
     ============================-->
 
     <!--==========================
-      Workforce Development Section
+      Mental Health Section
     ============================-->
     <br>
     <br>
@@ -151,9 +162,11 @@
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Training Futures</center></h3>
-              <strong><font color="white"><div id="Name1"></div></font></strong><br>
-              <font color="white"><a id="Email1" href="#" >/ <a id="Phone1" href="#"></font><br><br>
-              <font color="white"><a id="AddL1" href="#"><br> Suite 300 <br><a id="AddL2" href="#"></font><br>
+
+              <strong><font color="white"><a id="Name1"></a></strong><br><a id="Title1"></a><br><br>
+              <font color="white"><a id="Email1" href="#" style="color: white"></a> / <a id="Phone1" href="#" style="color: white"></a></font><br><br>
+              <font color="white"><a id="AddL1" href="#" style="color: white"></a><br><a id="AddL2"></a><br><a id="AddL3"></a></font><br>
+
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/training-futures/">Additional Information</a>
             </div>
           </section>
@@ -167,9 +180,11 @@
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Vehicles for Change</center></h3>
-              <strong><font color="white"><div id="Name2"></div></font></strong><br>
-              <font color="white"><a id="Email2" href="#" >/ <a id="Phone2" href="#"></font><br><br>
-              <font color="white"><a id="Add2L1" href="#"><br> Suite 100 <br><a id="Add2L2" href="#"></font><br>
+
+              <strong><font color="white"><a id="Name2"></a></strong><br><a id="Title2"></a><br><br>
+              <font color="white"><a id="Email2" href="#" style="color: white"></a> / <a id="Phone2" href="#" style="color: white"></a></font><br><br>
+              <font color="white"><a id="Add2L1" href="#" style="color: white"></a><br><a id="Add2L2"></a><br><a id="Add2L3"></a></font><br>
+  
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/vehicles-for-change/">Additional Information</a>
             </div>
           </section>
@@ -178,8 +193,8 @@
             <section id="call-to-action" class="wow fadeIn">
              <div class="container text-center">
                 <h3><center>TeamUp</center></h3>
-                <strong><font color="white"><div id="Name3"></div></font></strong><br>
-                <font color="white"><a id="Email3" href="#" >/ <a id="Phone3" href="#"></font><br><br>
+                <strong><font color="white"><a id="Name3"></a></strong><br>
+                <font color="white"><a id="Email3" href="#" style="color: white"></a> / <a id="Phone3" href="#" style="color: white"></a></font><br><br>
             </div>
             </section>
             
