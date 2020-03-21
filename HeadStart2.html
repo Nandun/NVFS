@@ -27,6 +27,12 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
   <!-- =======================================================
     Theme Name: BizPage
     Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
@@ -41,18 +47,19 @@
         console.log(result);
         $.each(result, function(i, field) {
             if(i != 0){return true;}
-            document.getElementById('d1').innerHTML = field.Desc1; 
-            document.getElementById("d2").innerHTML = field.Desc2; 
-            document.getElementById("d3").innerHTML = field.Desc3; 
+            //document.getElementById('d1').innerHTML = field.Desc1; 
+            //document.getElementById("d2").innerHTML = field.Desc2; 
+            //document.getElementById("d3").innerHTML = field.Desc3; 
 
-            document.getElementById("Name1").innerHTML = field.Name1; 
-            document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
-            document.getElementById("Email1").setAttribute("href",strLink); 
+            //document.getElementById("Name1").innerHTML = field.Name1; 
+            //document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
+            //document.getElementById("Email1").setAttribute("href",strLink); 
             document.getElementById("Phone1").innerHTML = field.Phone1; var strLink = "tel:" + field.Phone1;
             document.getElementById("Phone1").setAttribute("href",strLink); 
             document.getElementById("AddL1").innerHTML = field.AddL1; 
             document.getElementById("AddL2").innerHTML = field.AddL2; 
 
+            /*
             document.getElementById("Name2").innerHTML = field.Name2; 
             document.getElementById("Phone2").innerHTML = field.Phone2; var strLink = "tel:" + field.Phone2;
             document.getElementById("Phone2").setAttribute("href",strLink); 
@@ -69,7 +76,9 @@
             document.getElementById("Email3").setAttribute("href",strLink3); 
             document.getElementById("Add3L1").innerHTML = field.Add3L1; 
             document.getElementById("Add3L2").innerHTML = field.Add3L2; 
-            document.getElementById("Add3L3").innerHTML = field.Add3L3; });
+            document.getElementById("Add3L3").innerHTML = field.Add3L3; 
+            */
+          });
         });
     });
     </script>
@@ -80,7 +89,7 @@
   <!--==========================
     Header
   ============================-->
-   <header id="header">
+  <header id="header">
     <div class="container-fluid">
 
     <div id="logo" class="pull-left">
@@ -150,8 +159,8 @@
             <div class="container text-center">
               <h3><center>Contact</center></h3>
               <font color="white">
-                <a id="Phone1" href="#"> <br><br>
-                  <a id="AddL1" href="#"><br><a id="AddL2" href="#">
+                <a id="Phone1" href="#" style="color: white"></a><br><br>
+                <a id="AddL1" href="#" style="color: white"></a><br><a id="AddL2"></a>
               </font>
             </div>
           </section>
