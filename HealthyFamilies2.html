@@ -27,6 +27,12 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
   <!-- =======================================================
     Theme Name: BizPage
     Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
@@ -41,45 +47,47 @@
         console.log(result);
         $.each(result, function(i, field) {
             if(i != 0){return true;}
-            document.getElementById('d1').innerHTML = field.Desc1; 
-            document.getElementById("d2").innerHTML = field.Desc2; 
-            document.getElementById("d3").innerHTML = field.Desc3; 
+            //document.getElementById('d1').innerHTML = field.Desc1; 
+            //document.getElementById("d2").innerHTML = field.Desc2; 
+            //document.getElementById("d3").innerHTML = field.Desc3; 
 
             document.getElementById("Name1").innerHTML = field.Name1; 
-            document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
-            document.getElementById("Email1").setAttribute("href",strLink); 
+            //document.getElementById("Email1").innerHTML = field.Email1; var strLink = "mailto:" + field.Email1; 
+            //document.getElementById("Email1").setAttribute("href",strLink); 
             document.getElementById("Phone1").innerHTML = field.Phone1; var strLink = "tel:" + field.Phone1;
             document.getElementById("Phone1").setAttribute("href",strLink); 
-            document.getElementById("AddL1").innerHTML = field.AddL1; 
-            document.getElementById("AddL2").innerHTML = field.AddL2; 
+            //document.getElementById("AddL1").innerHTML = field.AddL1; 
+            //document.getElementById("AddL2").innerHTML = field.AddL2; 
 
             document.getElementById("Name2").innerHTML = field.Name2; 
             document.getElementById("Phone2").innerHTML = field.Phone2; var strLink = "tel:" + field.Phone2;
             document.getElementById("Phone2").setAttribute("href",strLink); 
-            document.getElementById("Email2").innerHTML = field.Email2; var strLink2 = "mailto:" + field.Email2; 
-            document.getElementById("Email2").setAttribute("href",strLink2); 
-            document.getElementById("Add2L1").innerHTML = field.Add2L1; 
-            document.getElementById("Add2L2").innerHTML = field.Add2L2; 
-            document.getElementById("Add2L3").innerHTML = field.Add2L3; });
+            //document.getElementById("Email2").innerHTML = field.Email2; var strLink2 = "mailto:" + field.Email2; 
+            //document.getElementById("Email2").setAttribute("href",strLink2); 
+            //document.getElementById("Add2L1").innerHTML = field.Add2L1; 
+            //document.getElementById("Add2L2").innerHTML = field.Add2L2; 
+            //document.getElementById("Add2L3").innerHTML = field.Add2L3; });
 
             document.getElementById("Name3").innerHTML = field.Name3; 
             document.getElementById("Phone3").innerHTML = field.Phone3; var strLink = "tel:" + field.Phone3;
             document.getElementById("Phone3").setAttribute("href",strLink); 
-            document.getElementById("Email3").innerHTML = field.Email3; var strLink3 = "mailto:" + field.Email3; 
-            document.getElementById("Email3").setAttribute("href",strLink3); 
-            document.getElementById("Add3L1").innerHTML = field.Add3L1; 
-            document.getElementById("Add3L2").innerHTML = field.Add3L2; 
-            document.getElementById("Add3L3").innerHTML = field.Add3L3; });
+            //document.getElementById("Email3").innerHTML = field.Email3; var strLink3 = "mailto:" + field.Email3; 
+            //document.getElementById("Email3").setAttribute("href",strLink3); 
+            //document.getElementById("Add3L1").innerHTML = field.Add3L1; 
+            //document.getElementById("Add3L2").innerHTML = field.Add3L2; 
+            //document.getElementById("Add3L3").innerHTML = field.Add3L3; });
 
             document.getElementById("Name4").innerHTML = field.Name4; 
             document.getElementById("Phone4").innerHTML = field.Phone4; var strLink = "tel:" + field.Phone4;
             document.getElementById("Phone4").setAttribute("href",strLink); 
-            document.getElementById("Email4").innerHTML = field.Email4; var strLink4 = "mailto:" + field.Email4; 
-            document.getElementById("Email4").setAttribute("href",strLink4); 
-            document.getElementById("Add4L1").innerHTML = field.Add4L1; 
-            document.getElementById("Add4L2").innerHTML = field.Add4L2; 
-            document.getElementById("Add4L3").innerHTML = field.Add4L3;
+            //document.getElementById("Email4").innerHTML = field.Email4; var strLink4 = "mailto:" + field.Email4; 
+            //document.getElementById("Email4").setAttribute("href",strLink4); 
+            //document.getElementById("Add4L1").innerHTML = field.Add4L1; 
+            //document.getElementById("Add4L2").innerHTML = field.Add4L2; 
+            //document.getElementById("Add4L3").innerHTML = field.Add4L3;
         });
+      });
+    });
     </script>
 </head>
 
@@ -88,7 +96,7 @@
   <!--==========================
     Header
   ============================-->
-   <header id="header">
+  <header id="header">
     <div class="container-fluid">
 
     <div id="logo" class="pull-left">
@@ -157,10 +165,10 @@
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Contact</center></h3>
-                <strong><font color="white"><div id="Name1"></div></font></strong><br><a id="Phone1" href="#"><br><br>
-                <strong><font color="white"><div id="Name2"></div></font></strong><br><a id="Phone2" href="#"><br><br>
-                <strong><font color="white"><div id="Name3"></div></font></strong><br><a id="Phone3" href="#"><br><br>
-                <strong><font color="white"><div id="Name4"></div></font></strong><br><a id="Phone4" href="#"><br><br>
+              <strong><font color="white"><a id="Name1"></a></strong><br><a id="Phone1" href="#" style="color: white"></a><br><br></font>
+              <strong><font color="white"><a id="Name2"></a></strong><br><a id="Phone2" href="#" style="color: white"></a><br><br></font>
+              <strong><font color="white"><a id="Name3"></a></strong><br><a id="Phone3" href="#" style="color: white"></a><br><br></font>
+              <strong><font color="white"><a id="Name4"></a></strong><br><a id="Phone4" href="#" style="color: white"></a><br><br></font>
             </div>
           </section>
         </header>
