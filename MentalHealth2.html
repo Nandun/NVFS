@@ -47,7 +47,7 @@
     $.getJSON(url, function(result) {
         console.log(result);
         $.each(result, function(i, field) {
-           // if(i != 0){return true;}
+            if(i != 0){return true;}
 
             //document.getElementById('d1').innerHTML = field.Desc1; 
             //document.getElementById("d2").innerHTML = field.Desc2; 
@@ -142,7 +142,7 @@
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Contact</center></h3>
-              <font color="white"><a id="Email1" href="#" ></a><p><a id="Phone1" href="#"></a></p></font>
+              <a id="Email1" href="#" style="color: white"></a><p><a id="Phone1" href="#" style="color: white"></a></p>
               <a class="cta-btn" href="https://www.nvfs.org/get-assistance/">Get Assistance</a>
             </div>
           </section>
