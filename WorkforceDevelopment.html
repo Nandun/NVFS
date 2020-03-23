@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,6 +100,9 @@
 		<br>
 		<br>
 		<br>
+	
+      <div class="container">
+        <header class="section-header wow fadeInUp">
           <h3>Workforce Development</h3>
           <h4><center>BUILDING A STRONGER NORTHERN VIRGINIA WORKFORCE</center></h4>
           <p>NVFS offers a variety of programs that provide individuals with the necessary skills, knowledge and resources to build brighter futures for themselves, for their families and for the Northern Virginia community. A parent with marketable job skills, and sometimes simply the ability to travel to a higher-paying job, has the opportunity to break the cycle of poverty within their family.
@@ -106,17 +110,19 @@
           These tools provide more control over the workforce options available to our neighbors and enhance the economic development capacity of the overall community.
         </p>
 
+
           <div class="img">
-            <img src="img/workforce.jpg" alt="" class="img-fluid">
+            <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/workforce.jpg" class="img-fluid">
           </div>
 
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Training Futures</center></h3>
-              <strong><font color="white">Janice Halowich</font></strong><br>
+              <strong><font color="white"><div id="nameMain"></div></font></strong><br>
               <font color="white">Program Manager</font><br><br>
-              <font color="white"><a href="mailto:jhalowich@nvfs.org">jhalowich@nvfs.org</a> / <a href="tel:5717482500">(571)748-2500</a></font><br><br>
-              <font color="white"><a href='https://maps.google.com/?q=8603&nbsp;westwood&nbsp;center&nbsp;drive'> <a href='https://maps.apple.com/maps?q=8603&nbsp;westwood&nbsp;center&nbsp;drive'>8603 Westwood Center Dr. <br> Suite 300 <br> Vienna, VA 22182</a></a></font><br>
+              <font color="white"><a id="emailMain" href="#" ></a><br><a id="phoneMain" href="#"></a><br></font>
+              <font color="white"><a id="address" href="#"></a></font><br>
+			  
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/training-futures/">Additional Information</a>
             </div>
           </section>
@@ -130,11 +136,10 @@
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Vehicles for Change</center></h3>
-              <strong><font color="white">Zoraida Tapia</font></strong><br>
+              <strong><font color="white"><div id="name2"></div></font></strong><br>
               <font color="white">Housing Counselor II</font><br><br>
-              <font color="white"><a href="mailto:ztapia@nvfs.org">ztapia@nvfs.org</a> / <a href="tel:5717482561">(571)748-2561</a></font><br><br>
-              <font color="white"><a href='https://maps.google.com/?q=10455&nbsp;white&nbsp;granite&nbsp;drive'> <a href='https://maps.apple.com/maps?q=10455&nbsp;white&nbsp;granite&nbsp;drive'>
-		      10455 White Granite Dr. <br> Suite 100 <br> Oakton, VA 22124</a></a></font><br>
+              <font color="white"><a id="email2" href="#"></a><br><a id="phone2" href="#"></a><br></font>
+              <font color="white"><a id="address2" href="#"></a></font><br>
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/vehicles-for-change/">Additional Information</a>
             </div>
           </section>
@@ -144,11 +149,12 @@
              <div class="container text-center">
                 <h3><center>TeamUp</center></h3>
                 <strong><font color="white">Julie Mullen</font></strong><br>
-                <font color="white"><a href="mailto:jmullen@nvfs.org">jmullen@nvfs.org</a> / <a href="tel:5717482628">(571)748-2628</a></font><br><br>
+                <font color="white"><a href="mailto:jmullen@nvfs.org">jmullen@nvfs.org</a> / (571)748-2628</font><br><br>
             </div>
             </section>
             
         </header>
+		
       </div>
     </section><!-- #services -->
 
@@ -196,4 +202,38 @@
   <script src="js/main.js"></script>
 
 </body>
+
+   <script type="text/javascript">
+	
+        $(document).ready(function() {
+            var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+            $.getJSON(url, function(result) {
+                console.log(result);
+                $.each(result, function(i, field) {
+				if(field.id != 11){return true;}
+				          console.log(" Do I reach here");
+                    document.getElementById("nameMain").innerHTML = field.nameMain;
+                    document.getElementById("emailMain").innerHTML = field.emailMain;
+					var strLink = "mailto:" + field.emailMain;
+					document.getElementById("emailMain").setAttribute("href",strLink);
+                    document.getElementById("phoneMain").innerHTML = field.phoneMain;	
+					var strLink = "tel:" + field.phoneMain;
+					document.getElementById("phoneMain").setAttribute("href",strLink);
+                    document.getElementById("address").innerHTML = field.address;
+					var strLink = "https://maps.google.com/?q=1200" + field.address;
+					document.getElementById("address").setAttribute("href",strLink);
+                    document.getElementById("name2").innerHTML = field.name2;		
+                    document.getElementById("phone2").innerHTML = field.phone2;
+					var strLink = "tel:" + field.phone2;
+					document.getElementById("phone2").setAttribute("href",strLink);
+                    document.getElementById("email2").innerHTML = field.email2;
+					var strLink2 = "mailto:" + field.email2;
+					document.getElementById("email2").setAttribute("href",strLink2);
+                    document.getElementById("address2").innerHTML = field.address2;
+					var strLink = "https://maps.google.com/?q=1200" + field.address2;
+					document.getElementById("address2").setAttribute("href",strLink);
+                });
+            });
+        });
+    </script>
 </html>
