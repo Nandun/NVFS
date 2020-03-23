@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,11 +157,9 @@
         <li><a href="#"><strong>Healthy Families Fairfax</strong><br><h6>703.324.7753</h6></a></li>
         <li><a href="#"><strong>Healthy Families Prince William</strong><br><h6>571.748.2743</h6></a></li>
         <li><a href="#"><strong>SERVE Family Shelter</strong><br><h6>571.748.2600<br>10054 Dean Dr.<br>Manassas, VA 20110</h6></a></li>
-
         <li><a href="#"><strong>Hunger Resource Center</strong><br><h6>571.748.2600<br>10058 Dean Dr.<br>Manassas, VA 20110<br><br><strong>Food Assistance</strong><br>571.748.2680<br><br>Darrell Dixon<br>Warehouse Manager<br>571.748.2602<br><br>Navara Cannon<br>Community Engagement / Volunteer Specialist<br>571.748.2536</h6></a></li>
         <li><a href="#"><strong>Multicultural Center</strong><br><h6>571.748.2800<br>6400 Arlington Blvd., Suite 110<br>Falls Church, VA 22042</h6></a></li>
         <li><a href="#"><strong>Head Start Center</strong><br><h6>571.748.2700<br>2920 S. Glebe Rd.<br>Arlington, VA 22206</h6></a></li>
-
         <li><a href="#"><strong>Early Head Start Vermont</strong><br><h6>571.748.2760<br>601 N. Vermont St.<br>Arlington, VA 22203</h6></a></li>
         <li><a href="#"><strong>Early Head Start Arlington Mill</strong><br><h6>571.748.2760<br>909 S. Dinwiddie St., Suite 105<br>Arlington, VA 22204</h6></a></li>
         <li><a href="#"><strong>Early Head Start Loudoun</strong><br><h6>571.748.2792<br>624 West Church Rd.<br>Sterling, VA 20164</h6></a></li>
@@ -170,14 +167,12 @@
         <li><a href="#"><strong>Early Head Start Wonderful Virginia Academy</strong><br><h6>571.748.2703<br>13420 Minnieville Rd.<br>Woodbridge, VA 22192</h6></a></li>
         <li><a href="#"><strong>Early Head Start Nikki’s Christian Learning</strong><br><h6> 571.748.2703<br>14900 Cloverdale Rd.<br>Woodbridge, VA 22193</h6></a></li>
         <li><a href="#"><strong>Thrift Shop</strong><br><h6>703.237.1910<br>2860 Annandale Rd.<br>Falls Church, VA 22042</h6></a></li>
-
         <li><a href="#"><strong>Become a Foster Parent</strong><br><h6>Megan Palanci<br>571.748.2588<br>mpalanci@nvfs.org<br><br>Priyanka Gogia<br>571.748.2588<br>pgogia@nvfs.org</h6></a></li>
         <li><a href="#"><strong>Corporate Giving or Volunteering</strong><br><h6>Karen Horowitz<br>571.748.2626<br>khorowitz@nvfs.org</h6></a></li>
         <li><a href="#"><strong>Donate Items or Services</strong><br><h6>C’Asha Faltz<br>571.748.2621<br>cfaltz@nvfs.org</h6></a></li>
         <li><a href="#"><strong>Thrift Shop</strong><br><h6>703.237.1910<br>2860 Annandale Rd.<br>Falls Church, VA 22042</h6></a></li>
       -->
-
-	  </ul>
+	    </ul>
 	  
       <script>
       function myFunction() {
@@ -197,12 +192,13 @@
           }
       }
       </script>
-        </header>
-    </div>
-  </section>
+    </header>
+  </div>
+</section>
 
-  </main>
+</main>
 
+<footer id="footer">
 <div class="container">
       <div class="copyright">
         &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
@@ -222,61 +218,61 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Uncomment below i you want to use a preloader -->
   <!-- <div id="preloader"></div> -->
-   <script type="text/javascript">
-        $(document).ready(function() {
-            var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
-				var line = "";
-				var test = [];
-            $.getJSON(url, function(result) {
-                console.log(result);
-                $.each(result, function(i, field) {
-			line = "";
-				if(field.title != null){
-                    line+= "<strong>" + field.title  + "</strong>" + "<br>";
-}
+  <script type="text/javascript">
+    $(document).ready(function() {
+        var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+    var line = "";
+    var test = [];
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+  line = "";
+    if(field.title != null){
+                line+= "<strong>" + field.title  + "</strong>" + "<br>";
+              }
 
-				if(field.nameMain != null){
-					line+= field.nameMain + "<br>";
-					}
-					
-				if(field.phoneMain != null){
-					line+= field.phoneMain + "<br>";
-					}
-					
-				if(field.address != null){
-					line+= field.address + "<br>";
-					}
-					
-				if(field.subResource != null){
-					line+= field.subResource + "<br>";
-					}
-					
-				if(field.name2 != null){
-					line+= field.name2 + "<br>";
-					}
-					
-				if(field.phone2 != null){
-					line+= field.phone2 + "<br>";
-					}
-					
-				if(field.address2  != null){
-					line+= field.address2 + "<br>";
-					}
-						test.push(line);
-                });
-			ul = document.getElementById('myUL');
-			
-			test.forEach(function (item)
-			{
-				let li = document.createElement('li');
-				ul.appendChild(li);
-				li.innerHTML += '<a href="#">' + item + '</a>';
-			}
-			);
+    if(field.nameMain != null){
+      line+= field.nameMain + "<br>";
+      }
+      
+    if(field.phoneMain != null){
+      line+= field.phoneMain + "<br>";
+      }
+      
+    if(field.address != null){
+      line+= field.address + "<br>";
+      }
+      
+    if(field.subResource != null){
+      line+= field.subResource + "<br>";
+      }
+      
+    if(field.name2 != null){
+      line+= field.name2 + "<br>";
+      }
+      
+    if(field.phone2 != null){
+      line+= field.phone2 + "<br>";
+      }
+      
+    if(field.address2  != null){
+      line+= field.address2 + "<br>";
+      }
+        test.push(line);
             });
-		
+  ul = document.getElementById('myUL');
+  
+  test.forEach(function (item)
+  {
+    let li = document.createElement('li');
+    ul.appendChild(li);
+    li.innerHTML += '<a href="#">' + item + '</a>';
+  }
+  );
         });
-    </script>
+
+    });
+</script>
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
