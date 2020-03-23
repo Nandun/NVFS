@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +27,14 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  
+    <script type="text/javascript" src="js/jquery.js"></script>
+	
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
   <!-- =======================================================
     Theme Name: BizPage
@@ -167,18 +176,7 @@
         <li><a href="#"><strong>Donate Items or Services</strong><br><h6>C’Asha Faltz<br>571.748.2621<br>cfaltz@nvfs.org</h6></a></li>
         <li><a href="#"><strong>Thrift Shop</strong><br><h6>703.237.1910<br>2860 Annandale Rd.<br>Falls Church, VA 22042</h6></a></li>
       -->
-	  <script>
-			let test = ["test", "cool"],
-			ul = document.getElementById('myUL');
-			
-			test.forEach(function (item)
-			{
-				let li = document.createElement('li');
-				ul.appendChild(li);
-				li.innerHTML += '<a href="#"><strong>' + item + '</strong></a>';
-			}
-			);
-	  </script>
+
 	  </ul>
 	  
       <script>
@@ -225,7 +223,61 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Uncomment below i you want to use a preloader -->
   <!-- <div id="preloader"></div> -->
+   <script type="text/javascript">
+        $(document).ready(function() {
+            var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+				var line = "";
+				var test = [];
+            $.getJSON(url, function(result) {
+                console.log(result);
+                $.each(result, function(i, field) {
+			line = "";
+				if(field.title != null){
+                    line+= "<strong>" + field.title  + "</strong>" + "<br>";
+}
 
+				if(field.nameMain != null){
+					line+= field.nameMain + "<br>";
+					}
+					
+				if(field.phoneMain != null){
+					line+= field.phoneMain + "<br>";
+					}
+					
+				if(field.address != null){
+					line+= field.address + "<br>";
+					}
+					
+				if(field.subResource != null){
+					line+= field.subResource + "<br>";
+					}
+					
+				if(field.name2 != null){
+					line+= field.name2 + "<br>";
+					}
+					
+				if(field.phone2 != null){
+					line+= field.phone2 + "<br>";
+					}
+					
+				if(field.address2  != null){
+					line+= field.address2 + "<br>";
+					}
+						test.push(line);
+                });
+			ul = document.getElementById('myUL');
+			
+			test.forEach(function (item)
+			{
+				let li = document.createElement('li');
+				ul.appendChild(li);
+				li.innerHTML += '<a href="#">' + item + '</a>';
+			}
+			);
+            });
+		
+        });
+    </script>
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
