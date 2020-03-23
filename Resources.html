@@ -141,7 +141,7 @@
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" title="Search Contact Information">
             
       <ul id="myUL">
-        <li><a href="#"><strong>Contact NVFS Headquarters</strong><br><h6>571.748.2500</h6></a></li>
+        <!-- <li><a href="#"><strong>Contact NVFS Headquarters</strong><br><h6>571.748.2500</h6></a></li>
         <li><a href="#"><strong>SERVE Campus</strong><br><h6>571.748.2600<br>10056 Dean Dr.<br>Manassas, VA 20110</h6></a></li>
         <li><a href="#"><strong>Training Futures</strong><br><h6>571.748.2860<br>8603 Westwood Center Dr., Suite 300<br>Vienna, VA 22182</h6></a></li>
         <li><a href="#"><strong>Healthy Families Alexandria</strong><br><h6>571.748.2850</h6></a></li>
@@ -166,9 +166,21 @@
         <li><a href="#"><strong>Corporate Giving or Volunteering</strong><br><h6>Karen Horowitz<br>571.748.2626<br>khorowitz@nvfs.org</h6></a></li>
         <li><a href="#"><strong>Donate Items or Services</strong><br><h6>C’Asha Faltz<br>571.748.2621<br>cfaltz@nvfs.org</h6></a></li>
         <li><a href="#"><strong>Thrift Shop</strong><br><h6>703.237.1910<br>2860 Annandale Rd.<br>Falls Church, VA 22042</h6></a></li>
-      </ul>
-      
-
+      -->
+	  <script>
+			let test = ["test", "cool"],
+			ul = document.getElementById('myUL');
+			
+			test.forEach(function (item)
+			{
+				let li = document.createElement('li');
+				ul.appendChild(li);
+				li.innerHTML += '<a href="#"><strong>' + item + '</strong></a>';
+			}
+			);
+	  </script>
+	  </ul>
+	  
       <script>
       function myFunction() {
           var input, filter, ul, li, a, i, txtValue;
