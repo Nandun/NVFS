@@ -243,25 +243,31 @@
 				if(field.phoneMain != null){
 					line+= "<a href= \"tel:" + field.phoneMain +"\">"+ field.phoneMain +"</a><br>"
 					}
+					if(field.emailMain != null){
+					line+= "<a href= \"mailto:" + field.emailMain +"\">"+ field.emailMain +"</a><br>"
+					}
 					
 				if(field.address != null){
-					line+= field.address + "<br>";
+					line+= "<a href= \"https://maps.google.com/?q=1200" + field.address +"\">"+ field.address  + "</a><br>";
 					}
 					
 				if(field.subResource != null){
-					line+= field.subResource + "<br>";
-					}
+					line+= "<strong>" + field.subResource + "</strong>"+  "<br>";
+					} 
 					
 				if(field.name2 != null){
 					line+= field.name2 + "<br>";
 					}
 					
-				if(field.phone2 != null){
-					line+= field.phone2 + "<br>";
+						if(field.phone2 != null){
+					line+= "<a href= \"tel:" + field.phone2 +"\">"+ field.phone2 +"</a><br>"
+					}
+					if(field.email2 != null){
+					line+= "<a href= \"mailto:" + field.email2 +"\">"+ field.email2 +"</a><br>"
 					}
 					
-				if(field.address2  != null){
-					line+= field.address2 + "<br>";
+					if(field.address2 != null){
+					line+= "<a href= \"https://maps.google.com/?q=1200" + field.address2 +"\">"+ field.address2  + "<br>";
 					}
 						test.push(line);
                 });
