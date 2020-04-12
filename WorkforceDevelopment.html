@@ -149,7 +149,7 @@
             <section id="call-to-action" class="wow fadeIn">
              <div class="container text-center">
                 <h3><center>TeamUp</center></h3>
-                <strong><font color="white">Julie Mullen</font></strong><br>
+                <strong><font color="white"><div id="name3"></div></font></strong><br>
                 <font color="white"><a href="mailto:jmullen@nvfs.org">jmullen@nvfs.org</a> / (571)748-2628</font><br><br>
             </div>
             </section>
@@ -211,7 +211,7 @@
             $.getJSON(url, function(result) {
                 console.log(result);
                 $.each(result, function(i, field) {
-				if(field.ID != 9){return true;}
+				if(field.id == 9){
 				          console.log(" Do I reach here");
                     document.getElementById("name").innerHTML = field.name;
                     document.getElementById("email").innerHTML = field.email;
@@ -223,16 +223,36 @@
                     document.getElementById("address").innerHTML = field.address;
 					var strLink = "https://maps.google.com/?q=1200" + field.address;
 					document.getElementById("address").setAttribute("href",strLink);
-                    document.getElementById("name2").innerHTML = field.name2;		
-                    document.getElementById("phone2").innerHTML = field.phone2;
-					var strLink = "tel:" + field.phone2;
+             }
+			 if(field.id == 10){
+			      console.log(" Do I reach here");
+                    document.getElementById("name2").innerHTML = field.name;
+                    document.getElementById("email2").innerHTML = field.email;
+					var strLink = "mailto:" + field.email;
+					document.getElementById("email2").setAttribute("href",strLink);
+                    document.getElementById("phone2").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
 					document.getElementById("phone2").setAttribute("href",strLink);
-                    document.getElementById("email2").innerHTML = field.email2;
-					var strLink2 = "mailto:" + field.email2;
-					document.getElementById("email2").setAttribute("href",strLink2);
-                    document.getElementById("address2").innerHTML = field.address2;
-					var strLink = "https://maps.google.com/?q=1200" + field.address2;
+                    document.getElementById("address2").innerHTML = field.address;
+					var strLink = "https://maps.google.com/?q=1200" + field.address;
 					document.getElementById("address2").setAttribute("href",strLink);
+			 }
+			 		 if(field.id == 11){
+			      console.log(" Do I reach here");
+                    document.getElementById("name3").innerHTML = field.name;
+                    document.getElementById("email3").innerHTML = field.email;
+					var strLink = "mailto:" + field.email;
+					document.getElementById("email3").setAttribute("href",strLink);
+                    document.getElementById("phone3").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone3").setAttribute("href",strLink);
+                    document.getElementById("address3").innerHTML = field.address;
+					var strLink = "https://maps.google.com/?q=1200" + field.address;
+					document.getElementById("address3").setAttribute("href",strLink);
+			 }
+			 else{
+			 return true;
+			 }
                 });
             });
         });
