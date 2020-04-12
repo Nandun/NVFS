@@ -120,7 +120,7 @@
             <div class="container text-center">
               <h3><center>Training Futures</center></h3>
               <strong><font color="white"><div id="name"></div></font></strong><br>
-              <font color="white">Program Manager</font><br><br>
+              <font color="white"><div id="title"></div></font><br><br>
               <font color="white"><a id="email" href="#" ></a><br><a id="phone" href="#"></a><br></font>
               <font color="white"><a id="address" href="#"></a></font><br>
 			  
@@ -138,7 +138,7 @@
             <div class="container text-center">
               <h3><center>Vehicles for Change</center></h3>
               <strong><font color="white"><div id="name2"></div></font></strong><br>
-              <font color="white">Housing Counselor II</font><br><br>
+              <font color="white"><div id="title2"></div></font><br><br>
               <font color="white"><a id="email2" href="#"></a><br><a id="phone2" href="#"></a><br></font>
               <font color="white"><a id="address2" href="#"></a></font><br>
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/vehicles-for-change/">Additional Information</a>
@@ -150,7 +150,7 @@
              <div class="container text-center">
                 <h3><center>TeamUp</center></h3>
                 <strong><font color="white"><div id="name3"></div></font></strong><br>
-                <font color="white"><a href="mailto:jmullen@nvfs.org">jmullen@nvfs.org</a> / (571)748-2628</font><br><br>
+                <font color="white"><a id="email3" href="#"></a><br><a id="phone3" href="#"></a></font><br><br>
             </div>
             </section>
             
@@ -211,9 +211,10 @@
             $.getJSON(url, function(result) {
                 console.log(result);
                 $.each(result, function(i, field) {
-				if(field.ID == 9){
+				if(field.id == 9){
 				          console.log(" Do I reach here");
                     document.getElementById("name").innerHTML = field.name;
+                    document.getElementById("title").innerHTML = field.title;
                     document.getElementById("email").innerHTML = field.email;
 					var strLink = "mailto:" + field.email;
 					document.getElementById("email").setAttribute("href",strLink);
@@ -224,8 +225,9 @@
 					var strLink = "https://maps.google.com/?q=1200" + field.address;
 					document.getElementById("address").setAttribute("href",strLink);
              }
-			 if(field.ID == 10){
+			 if(field.id == 10){
 			      console.log(" Do I reach here");
+                    document.getElementById("title2").innerHTML = field.title;
                     document.getElementById("name2").innerHTML = field.name;
                     document.getElementById("email2").innerHTML = field.email;
 					var strLink = "mailto:" + field.email;
@@ -237,7 +239,7 @@
 					var strLink = "https://maps.google.com/?q=1200" + field.address;
 					document.getElementById("address2").setAttribute("href",strLink);
 			 }
-			 		 if(field.ID == 11){
+			 		 if(field.id == 11){
 			      console.log(" Do I reach here");
                     document.getElementById("name3").innerHTML = field.name;
                     document.getElementById("email3").innerHTML = field.email;
