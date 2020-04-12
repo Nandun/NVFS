@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,9 +119,9 @@
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Training Futures</center></h3>
-              <strong><font color="white"><div id="nameMain"></div></font></strong><br>
+              <strong><font color="white"><div id="name"></div></font></strong><br>
               <font color="white">Program Manager</font><br><br>
-              <font color="white"><a id="emailMain" href="#" ></a><br><a id="phoneMain" href="#"></a><br></font>
+              <font color="white"><a id="email" href="#" ></a><br><a id="phone" href="#"></a><br></font>
               <font color="white"><a id="address" href="#"></a></font><br>
 			  
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/training-futures/">Additional Information</a>
@@ -212,13 +213,13 @@
                 $.each(result, function(i, field) {
 				if(field.id != 11){return true;}
 				          console.log(" Do I reach here");
-                    document.getElementById("nameMain").innerHTML = field.nameMain;
-                    document.getElementById("emailMain").innerHTML = field.emailMain;
-					var strLink = "mailto:" + field.emailMain;
-					document.getElementById("emailMain").setAttribute("href",strLink);
-                    document.getElementById("phoneMain").innerHTML = field.phoneMain;	
-					var strLink = "tel:" + field.phoneMain;
-					document.getElementById("phoneMain").setAttribute("href",strLink);
+                    document.getElementById("name").innerHTML = field.name;
+                    document.getElementById("email").innerHTML = field.email;
+					var strLink = "mailto:" + field.email;
+					document.getElementById("email").setAttribute("href",strLink);
+                    document.getElementById("phone").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone").setAttribute("href",strLink);
                     document.getElementById("address").innerHTML = field.address;
 					var strLink = "https://maps.google.com/?q=1200" + field.address;
 					document.getElementById("address").setAttribute("href",strLink);
