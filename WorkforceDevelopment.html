@@ -211,7 +211,7 @@
             $.getJSON(url, function(result) {
                 console.log(result);
                 $.each(result, function(i, field) {
-				if(field.id == 9){
+				if(field.ID == 9){
 				          console.log(" Do I reach here");
                     document.getElementById("name").innerHTML = field.name;
                     document.getElementById("title").innerHTML = field.title;
@@ -225,7 +225,7 @@
 					var strLink = "https://maps.google.com/?q=1200" + field.address;
 					document.getElementById("address").setAttribute("href",strLink);
              }
-			 if(field.id == 10){
+			 if(field.ID == 10){
 			      console.log(" Do I reach here");
                     document.getElementById("title2").innerHTML = field.title;
                     document.getElementById("name2").innerHTML = field.name;
@@ -239,7 +239,7 @@
 					var strLink = "https://maps.google.com/?q=1200" + field.address;
 					document.getElementById("address2").setAttribute("href",strLink);
 			 }
-			 		 if(field.id == 11){
+			 		 if(field.ID == 11){
 			      console.log(" Do I reach here");
                     document.getElementById("name3").innerHTML = field.name;
                     document.getElementById("email3").innerHTML = field.email;
