@@ -234,41 +234,41 @@
                 console.log(result);
                 $.each(result, function(i, field) {
 			line = "";
-				if(field.maintitle != null ||  field.maintitle === ""){
+				if(field.maintitle != null ||  field.maintitle != ""){
                     line+= "<strong>" + field.maintitle  + "</strong>" + "<br>";
 				}
 
-				if(field.name != null || field.name === ""){
+				if(field.name != null || field.name != ""){
 					line+= field.name + "<br>";
 					}
 					
-				if(field.phone != null || field.phone === ""){
+				if(field.phone != null || field.phone != ""){
 					line+= "<a href= \"tel:" + field.phone +"\">"+ field.phone +"</a><br>"
 					}
-					if(field.email != null || field.email === ""){
+					if(field.email != null || field.email != ""){
 					line+= "<a href= \"mailto:" + field.email +"\">"+ field.email +"</a><br>"
 					}
 					
-				if(field.address != null || field.address === ""){
+				if(field.address != null || field.address != ""){
 					line+= "<a href= \"https://maps.google.com/?q=" + field.address +"\"> <a href= \"https://maps.apple.com/maps?q=" + field.address + "\">"+ field.address  + "</a></a><br>";
 					}
 					
-				if(field.title2 != null || field.title2 === ""){
+				if(field.title2 != null || field.title2 != ""){
 					line+= "<strong>" + field.title2 + "</strong>"+  "<br>";
 					} 
 					
-				if(field.name2 != null ||  field.name2 === ""){
+				if(field.name2 != null ||  field.name2 != ""){
 					line+= field.name2 + "<br>";
 					}
 					
-						if(field.phone2 != null || field.phone2 === ""){
+						if(field.phone2 != null || field.phone2 != ""){
 					line+= "<a href= \"tel:" + field.phone2 +"\">"+ field.phone2 +"</a><br>"
 					}
-					if(field.email2 != null ||  field.email2 === ""){
+					if(field.email2 != null ||  field.email2 != ""){
 					line+= "<a href= \"mailto:" + field.email2 +"\">"+ field.email2 +"</a><br>"
 					}
 					
-					if(field.address2 != null || field.address2 === ""){
+					if(field.address2 != null || field.address2 != ""){
 					line+= "<a href= \"https://maps.google.com/?q=" + field.address2 +"\"> <a href= \"https://maps.apple.com/maps?q=" + field.address2 + "\">"+ field.address2  + "</a></a><br>";
 					}
 						test.push(line);
