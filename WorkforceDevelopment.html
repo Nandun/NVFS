@@ -122,7 +122,7 @@
               <strong><font color="white"><div id="name"></div></font></strong><br>
               <font color="white"><div id="title"></div></font><br><br>
               <font color="white"><a id="email" href="#" ></a><br><a id="phone" href="#"></a><br></font>
-              <font color="white"><a id="address" href="#"></a></font><br>
+              <font color="white"><a id="address" href="#"><a id="address1.1" href="#"></a></a></font><br>
 			  
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/training-futures/">Additional Information</a>
             </div>
@@ -140,7 +140,7 @@
               <strong><font color="white"><div id="name2"></div></font></strong><br>
               <font color="white"><div id="title2"></div></font><br><br>
               <font color="white"><a id="email2" href="#"></a><br><a id="phone2" href="#"></a><br></font>
-              <font color="white"><a id="address2" href="#"></a></font><br>
+              <font color="white"><a id="address2" href="#"><a id="address2.1" href="#"></a></a></font><br>
               <a class="cta-btn" href="https://www.nvfs.org/our-services/workforce-development/vehicles-for-change/">Additional Information</a>
             </div>
           </section>
@@ -222,8 +222,10 @@
 					var strLink = "tel:" + field.phone;
 					document.getElementById("phone").setAttribute("href",strLink);
                     document.getElementById("address").innerHTML = field.address;
-					var strLink = "https://maps.google.com/?q=1200" + field.address;
+          var strLink = "https://maps.google.com/?q=" + field.address;
 					document.getElementById("address").setAttribute("href",strLink);
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+					document.getElementById("address1.1").setAttribute("href",strLink);
              }
 			 if(field.ID == 10){
 			      console.log(" Do I reach here");
@@ -236,8 +238,10 @@
 					var strLink = "tel:" + field.phone;
 					document.getElementById("phone2").setAttribute("href",strLink);
                     document.getElementById("address2").innerHTML = field.address;
-					var strLink = "https://maps.google.com/?q=1200" + field.address;
-					document.getElementById("address2").setAttribute("href",strLink);
+          var strLink = "https://maps.google.com/?q=" + field.address;
+					  document.getElementById("address2").setAttribute("href",strLink);
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+				  	document.getElementById("address2.1").setAttribute("href",strLink);
 			 }
 			 		 if(field.ID == 11){
 			      console.log(" Do I reach here");
@@ -248,6 +252,9 @@
                     document.getElementById("phone3").innerHTML = field.phone;	
 					var strLink = "tel:" + field.phone;
 					document.getElementById("phone3").setAttribute("href",strLink);
+                    document.getElementById("address3").innerHTML = field.address;
+					var strLink = "https://maps.google.com/?q=1200" + field.address;
+					document.getElementById("address3").setAttribute("href",strLink);
 			 }
 			 else{
 			 return true;
