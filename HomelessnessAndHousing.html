@@ -129,12 +129,21 @@
               <h3><center>Assistance Hotline</center></h3>
               <font color="white">
 				<em>Shelter, Housing, Rent, Utilities</em><br><br>
-				
+				<!--
                 <strong>Fairfax County</strong><br>
 				<a href="tel:7032220880">703.222.0880</a><br><br>
-				
+                -->
+                <strong><font color="white"><div id="name"></div></font></strong>
+                <font color="white"><a id="phone" href="#"></a></font><br><br>
+
+                <!--
 				<strong>Prince William County</strong><br>
-				<a href="tel:703792.3366">703.792.3366</a> /  CE@pwcgov.org <br><br>
+                <a href="tel:703792.3366">703.792.3366</a> /  CE@pwcgov.org <br><br>
+                -->
+                <strong><font color="white"><div id="name2"></div></font></strong>
+                <font color="white"><a id="phone2" href="#"></a></font><br>
+                <font color="white"><a id="email2" href="#"></a></font><br><br>
+
               </font>
             </div>
           </section>
@@ -144,13 +153,7 @@
       </div>
 	  
     </section><!-- #services -->
-		
-			
-		
-	
-			
-  
-    
+		    
   </main>
 
 
@@ -198,4 +201,32 @@
   <script src="js/main.js"></script>
 
 </body>
+<script type="text/javascript">
+	
+    $(document).ready(function() {
+        var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+    if(field.ID == 24){
+              console.log(" Do I reach here");
+              document.getElementById("name").innerHTML = field.name;
+              document.getElementById("phone").innerHTML = field.phone;	
+                var strLink = "tel:" + field.phone;
+              document.getElementById("phone").setAttribute("href",strLink);
+              document.getElementById("name2").innerHTML = field.name;
+              document.getElementById("email2").innerHTML = field.email;
+                var strLink = "mailto:" + field.email;
+			  document.getElementById("email2").setAttribute("href",strLink);
+              document.getElementById("phone2").innerHTML = field.phone;	
+                var strLink = "tel:" + field.phone;
+              document.getElementById("phone2").setAttribute("href",strLink);
+         }
+   else{
+   return true;
+   }
+            });
+        });
+    });
+  </script>
 </html>
