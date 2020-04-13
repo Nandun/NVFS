@@ -9,7 +9,7 @@
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
-  <link href="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -44,13 +44,13 @@
       <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/nvfs.png" alt="" title="" /></a>
+        <a href="index.html"><img src="img/nvfs.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.html">Home</a></li>
-          <li class="menu-active"><a href="directory.html">Directory</a></li>
+          <li class="menu-active"><a href="Resources.html">Resources</a></li>
           <li class="menu-has-children"><a href="Services.html">Services</a>
             <ul>
               <li><a href="EarlyChildhoodDev.html">Early Childhood Development</a></li>
@@ -101,17 +101,26 @@
         </p>
 
           <div class="img">
-            <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/HF.jpg" alt="" class="img-fluid">
+            <img src="img/HF.jpg" alt="" class="img-fluid">
           </div>
 
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
               <h3><center>Contact</center></h3>
               <font color="white">
-                <strong>City of Alexandria</strong><br>(571)748-2850<br><br>
+                <!--<strong>City of Alexandria</strong><br>(571)748-2850<br><br>
                 <strong>Arlington County</strong><br>(571)748-2711<br><br>
                 <strong>Fairfax County</strong><br>(703)324-7753<br><br>
                 <strong>Prince William County</strong><br>(571)748-2743
+                -->
+                <a id="name"></a><br>
+                <a id="phone" href="#"></a><br><br>
+                <a id="name2"></a><br>
+                <a id="phone2" href="#"></a><br><br>
+                <a id="name3"></a><br>
+                <a id="phone3" href="#"></a><br><br>
+                <a id="name4"></a><br>
+                <a id="phone4" href="#"></a>
              </font>
             </div>
           </section>
@@ -165,4 +174,45 @@
   <script src="js/main.js"></script>
 
 </body>
+<script type="text/javascript">
+	
+  $(document).ready(function() {
+      var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+      $.getJSON(url, function(result) {
+          console.log(result);
+          $.each(result, function(i, field) {
+  if(field.ID == 19){
+              document.getElementById("name").innerHTML = field.name;
+              document.getElementById("phone").innerHTML = field.phone;
+              var strLink = "tel:" + field.phone;
+               document.getElementById("phone").setAttribute("href",strLink);
+       }
+  if(field.ID == 20)
+  {
+              document.getElementById("name2").innerHTML = field.name;
+              document.getElementById("phone2").innerHTML = field.phone;
+              var strLink = "tel:" + field.phone;
+               document.getElementById("phone2").setAttribute("href",strLink);
+  }
+  if(field.ID == 21)
+  {
+              document.getElementById("name3").innerHTML = field.name;
+              document.getElementById("phone3").innerHTML = field.phone;
+              var strLink = "tel:" + field.phone;
+               document.getElementById("phone3").setAttribute("href",strLink);
+  }
+  if(field.ID == 22)
+  {
+              document.getElementById("name4").innerHTML = field.name;
+              document.getElementById("phone4").innerHTML = field.phone;
+              var strLink = "tel:" + field.phone;
+               document.getElementById("phone4").setAttribute("href",strLink);
+  }
+ else{
+ return true;
+ }
+          });
+      });
+  });
+</script>
 </html>
