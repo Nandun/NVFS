@@ -125,16 +125,16 @@
             <div class="container text-center">
               <h3><center>Contact</center></h3>
               <font color="white">
-                10058 Dean Dr.Manassas, VA 20110<br><br>
-                <strong>Food Assistance</strong><br>571.748.2680<br><br>
+                <a id="address" href="#"></a><br><br>
+                <strong>Food Assistance</strong><br><a id="phone1" href="#"></a><br><br>
 				
-				Darrell Dixon<br>
-				Warehouse Manager<br>
-				571.748.2602<br><br>
+				<a id="name1" href="#"></a><br>
+				<a id="title1" href="#"></a><br>
+				<a id="phone2" href="#"></a><br><br>
 				
-				Navara Cannon<br>
-				Community Engagement / Volunteer Specialist<br>
-				571.748.2536<br>
+				<a id="name2" href="#"></a><br>
+				<a id="title2" href="#"></a><br>
+				<a id="phone3" href="#"></a><br>
               </font>
             </div>
           </section>
@@ -192,4 +192,49 @@
   <script src="js/main.js"></script>
 
 </body>
+ <script type="text/javascript">
+	
+        $(document).ready(function() {
+            var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+            $.getJSON(url, function(result) {
+                console.log(result);
+                $.each(result, function(i, field) {
+				if(field.ID == 36){
+				          console.log(" Do I reach here");
+                    document.getElementById("address").innerHTML = field.address;
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+					document.getElementById("address").setAttribute("href",strLink);
+          var strLink = "https://maps.google.com/?q=" + field.address;
+					document.getElementById("address1.1").setAttribute("href",strLink);
+             }
+			 if(field.ID == 37){
+			      console.log(" Do I reach here");
+                    document.getElementById("phone1").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone2").setAttribute("href",strLink);          
+			 }
+			 		 if(field.ID == 38){
+			      console.log(" Do I reach here");
+                    document.getElementById("name1").innerHTML = field.name;
+		    document.getElementById("title1").innerHTML = field.title;
+                    document.getElementById("phone2").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone3").setAttribute("href",strLink);
+			 }
+			 		 if(field.ID == 39){
+			      console.log(" Do I reach here");
+                    document.getElementById("name2").innerHTML = field.name;
+		    document.getElementById("title2").innerHTML = field.title;
+                    document.getElementById("phone3").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone3").setAttribute("href",strLink);
+			 }
+
+			 else{
+			 return true;
+			 }
+                });
+            });
+        });
+    </script>
 </html>
