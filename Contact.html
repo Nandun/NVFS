@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,27 +103,24 @@
           <h3>Contact</h3>
           <h4><center>Contact Us</center></h4>
 		  <p>
-		  Phone Number: <a href="tel:5717482500">571.748.2500</a> <br>
-		  Email: <a href="mailto: info@nvfs.org">info@nvfs.org</a> 
+		  Phone Number: <a id = "phone" href="#"></a> <br>
+		  Email: <a id = "email" href="#"></a>
 		  </p>
 		  <h4><center>Offices</center></h4>
 		  <h5><center>Headquarters</center></h5>
 		  <p>
-		  <a href='https://maps.google.com/?q=10455&nbsp;white&nbsp;granite&nbsp;drive'> 
-		  <a href='https://maps.apple.com/maps?q=10455&nbsp;white&nbsp;granite&nbsp;drive'>
-		  10455 White Granite Dr. <br> Suite 100 <br> Oakton, VA 22124</a></a> <br>
-		  Phone Number: <a href="tel:5717482500">571.748.2500</a> <br>
+		  <font color="white"><a id="address2" href="#"><a id="address2.1" href="#"></a></a></font><br>
+		  Phone Number: <a id = "phone2" href="#"></a> <br>
 		  Fax: 703.385.5176
 		  </p>
-		  <h5><center>Thrift Shop</center></h5>
+		  <h5><center><div id = "maintitle"></div></center></h5>
+		    
+		  <h5><center><div id = "name3"></div> </center></h5>
 		  <p>
-		  <a href="https://www.nvfs.org/support/thrift-shops/">Clock Tower @ Falls Church</a> <br>
-		  *For more info, click on the Clock Tower Link <br>
-		  <a href='https://maps.google.com/?q=2860&nbsp;annandale&nbsp;road'> 
-		  <a href='https://maps.apple.com/maps?q=2860&nbsp;annandale&nbsp;road'>
-		  2860 Annandale Rd. <br>
-		  Falls Church, VA 22042 </a></a><br>
-		  Phone Number: <a href="tel:7032371910">703.237.1910</a>
+
+		  <font color="white"><a id="address3" href="#"><a id="address3.1" href="#"></a></a></font><br>
+		  Phone Number: <a id = "phone3" href="#"></a> <br>
+		  
 		  </p>
           <!--<div class="img">
             <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/ECD.jpg" alt="" class="img-fluid">
@@ -186,4 +184,50 @@
   <script src="js/main.js"></script>
 
 </body>
+
+   <script type="text/javascript">
+	
+        $(document).ready(function() {
+            var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+            $.getJSON(url, function(result) {
+                console.log(result);
+                $.each(result, function(i, field) {
+				if(field.ID == 1){
+                    document.getElementById("email").innerHTML = field.email;
+					var strLink = "mailto:" + field.email;
+					document.getElementById("email").setAttribute("href",strLink);
+                    document.getElementById("phone").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone").setAttribute("href",strLink);
+             }
+			 if(field.ID == 2){
+                    document.getElementById("phone2").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone2").setAttribute("href",strLink);
+                    document.getElementById("address2").innerHTML = field.address;
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+				  	document.getElementById("address2").setAttribute("href",strLink);
+          var strLink = "https://maps.google.com/?q=" + field.address;
+					  document.getElementById("address2.1").setAttribute("href",strLink);
+          
+			 }
+			 		 if(field.ID == 3){
+                    document.getElementById("maintitle").innerHTML = field.maintitle;
+                    document.getElementById("name3").innerHTML = field.name;
+                    document.getElementById("phone3").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone3").setAttribute("href",strLink);
+					                    document.getElementById("address3").innerHTML = field.address;
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+				  	document.getElementById("address3").setAttribute("href",strLink);
+          var strLink = "https://maps.google.com/?q=" + field.address;
+					  document.getElementById("address3.1").setAttribute("href",strLink);
+			 }
+			 else{
+			 return true;
+			 }
+                });
+            });
+        });
+    </script>
 </html>
