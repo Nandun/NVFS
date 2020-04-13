@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -202,15 +203,23 @@
 		<br>
 		Thrift Store <br>
 		<a href="https://www.nvfs.org/support/thrift-shops/">Clock Tower @ Falls Church</a> <br>
-		  *For more info, click on the Clock Tower Link <br>
+          *For more info, click on the Clock Tower Link <br>
+          <!---
 		  <a href='https://maps.google.com/?q=2860&nbsp;annandale&nbsp;road'> 
 		  <a href='https://maps.apple.com/maps?q=2860&nbsp;annandale&nbsp;road'>
 		  2860 Annandale Rd. <br>
-		  Falls Church, VA 22042 </a></a> <br><br>
+          Falls Church, VA 22042 </a></a> <br><br>
+          -->
+          <font color="white"><a id="address" href="#"><a id="address1.1" href="#"></a></a></font><br><br>
+
 		Contact NVFS Donation Help <br>
-		C'Asha Faltz <br>
+        C'Asha Faltz <br>
+        <!--
 		Email: <a href="mailto: cfaltz@nvfs.org">cfaltz@nvfs.org</a> <br>
-		Phone Number: <a href="tel:5717482621">571.748.2621</a>
+        Phone Number: <a href="tel:5717482621">571.748.2621</a>
+        -->
+        Email:<font color="white"> <a id="email" href="#" ></a></font><br>Phone: <a id="phone" href="#"></a><br>
+
 		</p>
 		<button type="button" onclick="displayForm();">Donation Form</button>
 	</div>
@@ -404,4 +413,33 @@
   <script src="https://smtpjs.com/v3/smtp.js"></script>  
 
 </body>
+<script type="text/javascript">
+	
+    $(document).ready(function() {
+        var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+        $.getJSON(url, function(result) {
+            console.log(result);
+            $.each(result, function(i, field) {
+    if(field.ID == 40){
+              console.log(" Do I reach here");
+              document.getElementById("email").innerHTML = field.email;
+					var strLink = "mailto:" + field.email;
+					document.getElementById("email").setAttribute("href",strLink);
+                    document.getElementById("phone").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("phone").setAttribute("href",strLink);
+                    document.getElementById("address").innerHTML = field.address;
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+					document.getElementById("address").setAttribute("href",strLink);
+          var strLink = "https://maps.google.com/?q=" + field.address;
+					document.getElementById("address1.1").setAttribute("href",strLink);
+    }
+
+   else{
+   return true;
+   }
+            });
+        });
+    });
+  </script>
 </html>
