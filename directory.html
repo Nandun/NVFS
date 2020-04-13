@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
-  <link href="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -54,7 +55,7 @@
       <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/nvfs.png" alt="" title="" /></a>
+        <a href="index.html"><img src="img/nvfs.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -233,41 +234,41 @@
                 console.log(result);
                 $.each(result, function(i, field) {
 			line = "";
-				if(field.maintitle != null){
+				if(field.maintitle != null || === ""){
                     line+= "<strong>" + field.maintitle  + "</strong>" + "<br>";
 				}
 
-				if(field.name != null){
+				if(field.name != null || === ""){
 					line+= field.name + "<br>";
 					}
 					
-				if(field.phone != null){
+				if(field.phone != null || === ""){
 					line+= "<a href= \"tel:" + field.phone +"\">"+ field.phone +"</a><br>"
 					}
-					if(field.email != null){
+					if(field.email != null || === ""){
 					line+= "<a href= \"mailto:" + field.email +"\">"+ field.email +"</a><br>"
 					}
 					
-				if(field.address != null){
+				if(field.address != null || === ""){
 					line+= "<a href= \"https://maps.google.com/?q=" + field.address +"\"> <a href= \"https://maps.apple.com/maps?q=" + field.address + "\">"+ field.address  + "</a></a><br>";
 					}
 					
-				if(field.title2 != null){
+				if(field.title2 != null || === ""){
 					line+= "<strong>" + field.title2 + "</strong>"+  "<br>";
 					} 
 					
-				if(field.name2 != null){
+				if(field.name2 != null || === ""){
 					line+= field.name2 + "<br>";
 					}
 					
-						if(field.phone2 != null){
+						if(field.phone2 != null || === ""){
 					line+= "<a href= \"tel:" + field.phone2 +"\">"+ field.phone2 +"</a><br>"
 					}
-					if(field.email2 != null){
+					if(field.email2 != null || === ""){
 					line+= "<a href= \"mailto:" + field.email2 +"\">"+ field.email2 +"</a><br>"
 					}
 					
-					if(field.address2 != null){
+					if(field.address2 != null || === ""){
 					line+= "<a href= \"https://maps.google.com/?q=" + field.address2 +"\"> <a href= \"https://maps.apple.com/maps?q=" + field.address2 + "\">"+ field.address2  + "</a></a><br>";
 					}
 						test.push(line);
