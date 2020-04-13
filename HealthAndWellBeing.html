@@ -128,7 +128,7 @@
               <h3><center>Contact</center></h3>
               <font color="white">
                 NVFS Headquarters<br><br>
-		      Email: <a href="mailto:info@nvfs.org">info@nvfs.org</a><br><br>Phone: <a href="tel:5717482500">571.748.2500</a>
+		      Email: <a id="email" href="#"></a><br><br>Phone: <a id="phone" href="#"></a>
               </font>
             </div>
           </section>
@@ -185,4 +185,27 @@
   <script src="js/main.js"></script>
 
 </body>
+<script type="text/javascript">
+	
+  $(document).ready(function() {
+      var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+      $.getJSON(url, function(result) {
+          console.log(result);
+          $.each(result, function(i, field) {
+  if(field.ID == 1){
+            console.log(" Do I reach here");
+              document.getElementById("email").innerHTML = field.email;
+    var strLink = "mailto:" + field.email;
+    document.getElementById("email").setAttribute("href",strLink);
+              document.getElementById("phone").innerHTML = field.phone;	
+    var strLink = "tel:" + field.phone;
+    document.getElementById("phone").setAttribute("href",strLink);
+       }
+ else{
+ return true;
+ }
+          });
+      });
+  });
+</script>
 </html>
