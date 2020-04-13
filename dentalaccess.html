@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +105,6 @@
 				</li>
 				<li>Treating dental health issues that also affect appearance helps patients succeed in school, work and/or finding work, and creating and maintaining other social relationships.
 				</li>
-							
 			</ul>
 			
 		<h2>Get Assistance</h2>
@@ -122,16 +122,15 @@
             <div class="container text-center">
              <h3><center>Contact</center></h3>
               <font color="white">
-                <strong>Loudoun County residents:</strong><br>
+                <strong><div id = "name"></div></strong><br>
 				NVFS does not provide dental access services in Loudoun County. Please call the county intake line at
 				<br>
-				703.771.5851
-				<br><br>
+				              <font color="white"><a id="phone" href="#"></a></font><br><br>
               <h3><center>EMERGENCY SERVICES</center></h3>  
-			  Northern Virginia Community College<br>
-			  703.822.6607<br><br>
-			  Howard University (located in Washington, DC)<br>
-			  202.806.0064
+                <strong><div id = "name2"></div></strong><br>
+				              <font color="white"><a id="phone2" href="#"></a></font><br><br>
+                <strong><div id = "name3"></div></strong><br>
+				              <font color="white"><a id="phone3" href="#"></a></font><br><br>
               </font>
             </div>
           </section>
@@ -174,4 +173,36 @@
   <script src="js/main.js"></script>
 
 </body>
+<script type="text/javascript">
+	
+  $(document).ready(function() {
+      var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+      $.getJSON(url, function(result) {
+          console.log(result);
+          $.each(result, function(i, field) {
+  if(field.ID == 33){
+    document.getElementById("name").innerHTML = field.name;
+    document.getElementById("phone").innerHTML = field.phone;	
+    var strLink = "tel:" + field.phone;
+      document.getElementById("phone").setAttribute("href",strLink);
+       }
+	    if(field.ID == 34){
+    document.getElementById("name2").innerHTML = field.name;
+    document.getElementById("phone2").innerHTML = field.phone;	
+    var strLink = "tel:" + field.phone;
+      document.getElementById("phone").setAttribute("href",strLink);
+       }
+	    if(field.ID == 35){
+    document.getElementById("name3").innerHTML = field.name;
+    document.getElementById("phone3").innerHTML = field.phone;	
+    var strLink = "tel:" + field.phone;
+      document.getElementById("phone").setAttribute("href",strLink);
+       }
+ else{
+ return true;
+ }
+          });
+      });
+  });
+</script>
 </html>
