@@ -9,7 +9,7 @@
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
-  <link href="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -39,13 +39,13 @@
       <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/nvfs.png" alt="" title="" /></a>
+        <a href="index.html"><img src="img/nvfs.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.html">Home</a></li>
-	  <li class="menu-active"><a href="directory.html">Directory</a></li>
+	  <li class="menu-active"><a href="Resources.html">Resources</a></li>
           <li class="menu-has-children"><a href="Services.html">Services</a>
             <ul>
               <li><a href="EarlyChildhoodDev.html">Early Childhood Development</a></li>
@@ -107,7 +107,7 @@
 			
         
 		<div class="img">
-            <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/herohealthservices.jpg" alt="" class="img-fluid">
+            <img src="img/herohealthservices.jpg" alt="" class="img-fluid">
           </div>
 
           <section id="call-to-action" class="wow fadeIn">
@@ -115,31 +115,42 @@
 			
             <h3><center>Fairfax County</center></h3>
               <font color="white">
+                <!--
                 Medical Care for Children Partnership<br>
-				703.324.7315<br><br>
+			          	703.324.7315<br><br>
                 Adult Dental Services<br>
-				571.748.2593<br><br>
-				Fairfax Accessible Medication Program<br><br>
-				Partnership for Healthier Kids<br><br>
-				Community Health Care Network<br>
-				<a href="https://www.fairfaxcounty.gov/strategymanagementhhs/community-health-care-network-transition">Navigate to website >></a>
+                  571.748.2593<br><br>
+                -->
+                <a id="name"></a> <br>
+                <a id="phone" href="#"></a><br><br>
+                <a id="name2"></a><br>
+                <a id="phone2"></a><br><br>
+				        <a href="https://www.fairfaxcounty.gov/strategymanagementhhs/community-health-care-network-transition">Navigate to website >></a>
               </font>
 			  <br><br>
 			<h3><center>Loudoun County</center></h3>
 				<font color="white">
-				Loudoun Accessible Medication Program
+        Loudoun Accessible Medication Program <br>
+        <a href="https://www.nvfs.org">Navigate to website >></a>
 				</font>
 				 <br><br>
 			<h3><center>Prince William County</center></h3>
 				<font color="white">
+          <!--
 				Pediatric Primary Care (PPCP)<br>
-				703.244.7310<br><br>
+				  703.244.7310<br><br>
 				Dental for Adults & Children<br>
-				571.748.2635<br><br>
+				  571.748.2635<br><br>
 				Prescription Medication Access Program (PAP)<br>
-				703.680.7950 x3124<br><br>
-				HealthLink<br><br>
-				Pharmacy Central
+          703.680.7950 x3124<br><br>
+          -->
+          <a id="name3"></a><br>
+          <a id="phone3" href=""></a><br><br>
+          <a id="name4"></a><br>
+          <a id="phone4" href=""></a><br><br>
+          <a id="name5"></a><br>
+          <a id="phone5" href=""></a><br><br>
+        <a href="https://www.nvfs.org">Navigate to website >></a>
 				</font>
             </div>
           </section>
@@ -182,4 +193,48 @@
   <script src="js/main.js"></script>
 
 </body>
+<script type="text/javascript">
+	
+  $(document).ready(function() {
+      var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+      $.getJSON(url, function(result) {
+          console.log(result);
+          $.each(result, function(i, field) {
+  if(field.ID == 28){
+              document.getElementById("name").innerHTML = field.name;
+              document.getElementById("phone").innerHTML = field.phone;	
+                var strLink = "tel:" + field.phone;
+                  document.getElementById("phone").setAttribute("href",strLink);
+       }
+  if(field.ID == 29){
+              document.getElementById("name2").innerHTML = field.name;
+              document.getElementById("phone2").innerHTML = field.phone;	
+                var strLink = "tel:" + field.phone;
+                  document.getElementById("phone2").setAttribute("href",strLink);
+       }
+  if(field.ID == 30){
+              document.getElementById("name3").innerHTML = field.name;
+              document.getElementById("phone3").innerHTML = field.phone;	
+                var strLink = "tel:" + field.phone;
+                  document.getElementById("phone3").setAttribute("href",strLink);
+       }
+  if(field.ID == 31){
+              document.getElementById("name4").innerHTML = field.name;
+              document.getElementById("phone4").innerHTML = field.phone;	
+                var strLink = "tel:" + field.phone;
+                  document.getElementById("phone4").setAttribute("href",strLink);
+       }
+  if(field.ID == 32){
+              document.getElementById("name5").innerHTML = field.name;
+              document.getElementById("phone5").innerHTML = field.phone;	
+                var strLink = "tel:" + field.phone;
+                  document.getElementById("phone5").setAttribute("href",strLink);
+       }
+ else{
+ return true;
+ }
+          });
+      });
+  });
+</script>
 </html>
