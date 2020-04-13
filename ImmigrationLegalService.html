@@ -162,7 +162,7 @@
             <div class="container text-center">
               <h3><center>Legal Hotline</center></h3>
               <font color="white">
-	      <a href="tel:5717482806">571.748.2806</a><br><br>
+	      <a id="phone" href="#"></a><br><br>
                 Se habla español<br><br>Please note that due to high call volume, 
 				it may take up to one week for one of our immigration attorneys
 				to return your call.
@@ -218,4 +218,21 @@
   <script src="js/main.js"></script>
 
 </body>
+ $(document).ready(function() {
+      var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+      $.getJSON(url, function(result) {
+          console.log(result);
+          $.each(result, function(i, field) {
+  if(field.ID == 12){
+            console.log(" Do I reach here");
+              document.getElementById("phone").innerHTML = field.phone;	
+    var strLink = "tel:" + field.phone;
+    document.getElementById("phone").setAttribute("href",strLink);
+       }
+ else{
+ return true;
+ }
+          });
+      });
+  });
 </html>
