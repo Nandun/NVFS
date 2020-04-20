@@ -773,7 +773,21 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-size: cover;
   padding: 60px 0 40px 0;
 }
-
+#cont {
+ background: url("https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/cont.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+}
+#aboutpic {
+ background: url("https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/img/aboutpic.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+}
+#departments {
+ background: url("https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/departments.jpg") center top no-repeat fixed;
+  background-size: cover;
+  padding: 60px 0 40px 0;
+}
 #services .box {
   margin-bottom: 30px;
 }
