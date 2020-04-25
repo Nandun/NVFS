@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,10 +95,12 @@
           <p>Help ensure that all of our neighbors who turn to us in times of need—during this health 
 		  crisis and beyond—will be met with the compassionate, innovative programs that NVFS has been
 		  providing for nearly 100 years.</p>
+		  <h4><center>Text to Donate</center></h4>
+          <center><div id = "address"></div><a id="phone" href="#"></a></center>
+		  
         </header>
-		
 	      <div class="img">
-            <img src="img/donate2.jpg" alt="" class="img-fluid">
+            <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/donate2.jpg" alt="" class="img-fluid">
           </div>
 
       </div>
@@ -149,4 +152,24 @@
   <script src="js/main.js"></script>
 
 </body>
+<script type="text/javascript">
+	
+  $(document).ready(function() {
+      var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+      $.getJSON(url, function(result) {
+          console.log(result);
+          $.each(result, function(i, field) {
+  if(field.ID == 41){
+              document.getElementById("address").innerHTML = field.address;
+              document.getElementById("phone").innerHTML = field.phone;	
+               var strLink = "tel:" + field.phone;
+                document.getElementById("phone").setAttribute("href",strLink);
+       }
+ else{
+ return true;
+ }
+          });
+      });
+  });
+</script>
 </html>
