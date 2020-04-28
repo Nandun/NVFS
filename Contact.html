@@ -102,27 +102,6 @@
 		<br>
 		<br>
           <h3>Contact</h3>
-          <h4><center>Contact Us</center></h4>
-		  <p>
-		  Phone Number: <a id = "phone" href="#"></a> <br>
-		  Email: <a id = "email" href="#"></a>
-		  </p>
-		  <h4><center>Offices</center></h4>
-		  <h5><center>Headquarters</center></h5>
-		  <p>
-		  <font color="white"><a id="address2" href="#"><a id="address2.1" href="#"></a></a></font><br>
-		  Phone Number: <a id = "phone2" href="#"></a> <br>
-		  Fax: 703.385.5176
-		  </p>
-		  <h5><center><div id = "maintitle"></div></center></h5>
-		    
-		  <h5><center><div id = "name3"></div> </center></h5>
-		  <p>
-
-		  <font color="white"><a id="address3" href="#"><a id="address3.1" href="#"></a></a></font><br>
-		  Phone Number: <a id = "phone3" href="#"></a> <br>
-		  
-		  </p>
           <!--<div class="img">
             <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/ECD.jpg" alt="" class="img-fluid">
           </div>
@@ -193,15 +172,7 @@
             $.getJSON(url, function(result) {
                 console.log(result);
                 $.each(result, function(i, field) {
-				if(field.ID == 1){
-                    document.getElementById("email").innerHTML = field.email;
-					var strLink = "mailto:" + field.email;
-					document.getElementById("email").setAttribute("href",strLink);
-                    document.getElementById("phone").innerHTML = field.phone;	
-					var strLink = "tel:" + field.phone;
-					document.getElementById("phone").setAttribute("href",strLink);
-             }
-			 if(field.ID == 2){
+			 if(field.ID == 1){
                     document.getElementById("phone2").innerHTML = field.phone;	
 					var strLink = "tel:" + field.phone;
 					document.getElementById("phone2").setAttribute("href",strLink);
