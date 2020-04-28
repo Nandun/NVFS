@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,7 @@
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
-  <link href="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -53,13 +55,13 @@
       <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/nvfs.png" alt="" title="" /></a>
+        <a href="index.html"><img src="img/nvfs.png" alt="" title="" /></a>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.html">Home</a></li>
-          <li class="menu-active"><a href="Resources.html">Resources</a></li>
+          <li class="menu-active"><a href="directory.html">Directory</a></li>
           <li class="menu-has-children"><a href="Services.html">Services</a>
             <ul>
               <li><a href="EarlyChildhoodDev.html">Early Childhood Development</a></li>
@@ -225,49 +227,49 @@
   <!-- <div id="preloader"></div> -->
    <script type="text/javascript">
         $(document).ready(function() {
-            var url = "https://nvfsserver.azurewebsites.net/sqlTest2.php";
+            var url = "https://nvfsserver.azurewebsites.net/sqlTest3.php";
 				var line = "";
 				var test = [];
             $.getJSON(url, function(result) {
                 console.log(result);
                 $.each(result, function(i, field) {
 			line = "";
-				if(field.title != null){
-                    line+= "<strong>" + field.title  + "</strong>" + "<br>";
+				if(field.maintitle != null &&  field.maintitle != ""){
+                    line+= "<strong>" + field.maintitle  + "</strong>" + "<br>";
 				}
 
-				if(field.nameMain != null){
-					line+= field.nameMain + "<br>";
+				if(field.name != null && field.name != ""){
+					line+= field.name + "<br>";
 					}
 					
-				if(field.phoneMain != null){
-					line+= "<a href= \"tel:" + field.phoneMain +"\">"+ field.phoneMain +"</a><br>"
+				if(field.phone != null && field.phone != ""){
+					line+= "<a href= \"tel:" + field.phone +"\">"+ field.phone +"</a><br>"
 					}
-					if(field.emailMain != null){
-					line+= "<a href= \"mailto:" + field.emailMain +"\">"+ field.emailMain +"</a><br>"
-					}
-					
-				if(field.address != null){
-					line+= "<a href= \"https://maps.google.com/?q=1200" + field.address +"\">"+ field.address  + "</a><br>";
+					if(field.email != null && field.email != ""){
+					line+= "<a href= \"mailto:" + field.email +"\">"+ field.email +"</a><br>"
 					}
 					
-				if(field.subResource != null){
-					line+= "<strong>" + field.subResource + "</strong>"+  "<br>";
+				if(field.address != null && field.address != ""){
+					line+= "<a href= \"https://maps.google.com/?q=" + field.address +"\"> <a href= \"https://maps.apple.com/maps?q=" + field.address + "\">"+ field.address  + "</a></a><br>";
+					}
+					
+				if(field.title2 != null && field.title2 != ""){
+					line+= "<strong>" + field.title2 + "</strong>"+  "<br>";
 					} 
 					
-				if(field.name2 != null){
+				if(field.name2 != null &&  field.name2 != ""){
 					line+= field.name2 + "<br>";
 					}
 					
-						if(field.phone2 != null){
+						if(field.phone2 != null && field.phone2 != ""){
 					line+= "<a href= \"tel:" + field.phone2 +"\">"+ field.phone2 +"</a><br>"
 					}
-					if(field.email2 != null){
+					if(field.email2 != null &&  field.email2 != ""){
 					line+= "<a href= \"mailto:" + field.email2 +"\">"+ field.email2 +"</a><br>"
 					}
 					
-					if(field.address2 != null){
-					line+= "<a href= \"https://maps.google.com/?q=1200" + field.address2 +"\">"+ field.address2  + "<br>";
+					if(field.address2 != null && field.address2 != ""){
+					line+= "<a href= \"https://maps.google.com/?q=" + field.address2 +"\"> <a href= \"https://maps.apple.com/maps?q=" + field.address2 + "\">"+ field.address2  + "</a></a><br>";
 					}
 						test.push(line);
                 });
