@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,17 +110,19 @@
 	function check()
 		{
 			document.getElementById("finish").innerHTML = "Thank you so much for your donation! This donation was sent to NVFS and once it is verified and approved, you will be contacted again to confirm the donation or correct any issues that may exist. Thank you so much for donating!";
-			
 			document.getElementById("dropdownDiv").style.display="none";
 			document.getElementById("myform").style.display="none";
-
-      document.getElementById("finishID").style.visibility="visible";
+      document.getElementById("finishID").style.display="block";
+      document.body.scrollTop = 0;
+ 		 	document.documentElement.scrollTop = 0;
 		}
 		
 	function displayForm()
 		{
 			document.getElementById("firstScreen").style.display="none";
 			document.getElementById("dropdownDiv").style.display="block";
+      document.body.scrollTop = 0;
+ 		 	document.documentElement.scrollTop = 0;
 		}
 		
 	function displayDropOff()
@@ -346,12 +347,11 @@
             </div>
             <div class="text-center"><button type="submit" id="insert" onclick="check(); return false">Submit</button></div>
           </form>
-		  <div>
-         <p id="finish"></p>
-		  <div class="img"> 
-		  <img id="finishID" src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/donateInKind.png" class="img-fluid" style="visibility: hidden;">
- </div>
-   </div>
+	
+      <div>
+      <p id="finish"></p>
+      <img id="finishID" src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/donateInKind.png" style="display: none;" class="img-fluid">
+      </div>  
 	
         </div>
 	      
