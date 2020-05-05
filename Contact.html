@@ -118,6 +118,12 @@
 		  Phone Number: <a id = "phone3" href="#"></a> <br>
 		  
 		  </p>
+		
+		  <h5><center><div id = "ServeTitle"></div></center></h5>
+		  <p>
+		  <font color="white"><a id="ServeAddress" href="#"><a id="ServeAddress2" href="#"></a</a></font><br>
+		  Phone Number: <a id = "ServePhone" href="#"></a> <br>
+		  </p>
           <!--<div class="img">
             <img src="https://cseastus1003bffd85a1d74b.blob.core.windows.net/blobs/ECD.jpg" alt="" class="img-fluid">
           </div>
@@ -210,6 +216,17 @@
 				  	document.getElementById("address3").setAttribute("href",strLink);
           var strLink = "https://maps.google.com/?q=" + field.address;
 					  document.getElementById("address3.1").setAttribute("href",strLink);
+			 }
+			 		 if(field.ID == 4){
+                    document.getElementById("ServeTitle").innerHTML = field.maintitle;
+                    document.getElementById("ServePhone").innerHTML = field.phone;	
+					var strLink = "tel:" + field.phone;
+					document.getElementById("ServePhone").setAttribute("href",strLink);
+					                    document.getElementById("ServeAddress").innerHTML = field.address;
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+				  	document.getElementById("ServeAddress").setAttribute("href",strLink);
+          var strLink = "https://maps.google.com/?q=" + field.address;
+					  document.getElementById("ServeAddress2").setAttribute("href",strLink);
 			 }
 			 else{
 			 return true;
