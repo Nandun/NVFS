@@ -125,7 +125,11 @@
 
           <section id="call-to-action" class="wow fadeIn">
             <div class="container text-center">
-              
+              <h3><center>Contact</center></h3>
+              <font color="white">
+                NVFS Headquarters<br><br>
+		      Email: <a id="email" href="#"></a><br><br>Phone: <a id="phone" href="#"></a>
+              </font>
             </div>
           </section>
 
@@ -188,7 +192,7 @@
       $.getJSON(url, function(result) {
           console.log(result);
           $.each(result, function(i, field) {
-  if(field.ID == 1){
+  if(field.ID == 23){
             console.log(" Do I reach here");
               document.getElementById("email").innerHTML = field.email;
     var strLink = "mailto:" + field.email;
