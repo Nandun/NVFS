@@ -1598,7 +1598,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
 }
 
-@media (max-width: 768px) {
   .back-to-top {
     bottom: 15px;
   }
@@ -1622,4 +1621,3 @@ body.mobile-nav-active #mobile-nav-toggle {
   #mobile-nav-toggle {
     display: inline;
   }
-}
