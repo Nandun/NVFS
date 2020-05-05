@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>NVFS In-Kind Donations Page</title>
-<meta name="viewport" content="initial-scale = 1, width= device-width, height= device-height, viewport-fit= cover">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
 
@@ -127,6 +127,7 @@
 		
 	function displayDropOff()
 		{
+      document.getElementById("firstScreen").style.display="none";
 			document.getElementById("myform").style.display="block";
 			document.getElementById("stree").style.display="none";
 			document.getElementById("cit").style.display="none";
@@ -185,15 +186,16 @@
 				Priority Items:
 				<ul>
 					<li>Food</li>
-					<li>Cleaning Supplies</li>
-					<li>Paper Products</li>
-					<li>Toiletries (Full-size)</li>
-					<li>Diapers and Wipes</li>
+					<li>Clothing</li>
 					<li>Household Items</li>
-					<li>Art & Classroom Supplies (Pre-school)</li>
-					<li>Board Books</li>
-					<li>Transportation (Metro cards, gas cards, ride service vouchers)</li>
-					<li>Gift Cards</li>	
+					<li>Toiletries</li>
+					<li>Books</li>
+					<li>Toys</li>
+					<li>Transportation</li>
+					<li>Art & Classroom Supplies</li>
+					<li>Electronics</li>
+					<li>Sports Equipment</li>
+					<li>Other</li>	
 				</ul>
 			</li>
 		</ul>
@@ -223,14 +225,13 @@
         Email:<font color="white"> <a id="email" href="#" ></a></font><br>Phone: <a id="phone" href="#"></a><br>
 
 		</p>
-		<button type="button" onclick="displayForm();">Donation Form</button>
+		<button type="button" onclick="displayDropOff();">Donation Form</button>
 	</div>
 	      <div name="dropdownDiv" id="dropdownDiv" style="display: none;">
-		Thank you for donating a large amount! There are two options for donating. You can Drop Off your donation or you can
-		have it Picked Up. Please select which way you will be donating.
+		Thank you for donating a large amount! Please select the Drop Off button to open the 
 		<br> <br>
 		      <button type="button" onclick="displayDropOff();">Drop Off</button>
-		      <button type="button" onclick="displayPickUp();">Pick Up</button>
+		      <!--<button type="button" onclick="displayPickUp();">Pick Up</button>-->
 	      </div>
 	      <script>
 				
