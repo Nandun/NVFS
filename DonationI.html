@@ -425,24 +425,22 @@
             console.log(result);
             $.each(result, function(i, field) {
 		    if(field.ID == 3){
-			    
               document.getElementById("name").innerHTML = field.name;
+			      document.getElementById("address").innerHTML = field.address;
+          var strLink = "https://maps.apple.com/?q=" + field.address;
+					document.getElementById("address").setAttribute("href",strLink);
+          var strLink = "https://maps.google.com/?q=" + field.address;
+					document.getElementById("address1.1").setAttribute("href",strLink);
 		    }
     if(field.ID == 40){
               console.log(" Do I reach here");
-	    
-              document.getElementById("name").innerHTML = field.name2;
+              document.getElementById("name2").innerHTML = field.name;
               document.getElementById("email").innerHTML = field.email;
 					var strLink = "mailto:" + field.email;
 					document.getElementById("email").setAttribute("href",strLink);
                     document.getElementById("phone").innerHTML = field.phone;	
 					var strLink = "tel:" + field.phone;
 					document.getElementById("phone").setAttribute("href",strLink);
-                    document.getElementById("address").innerHTML = field.address;
-          var strLink = "https://maps.apple.com/?q=" + field.address;
-					document.getElementById("address").setAttribute("href",strLink);
-          var strLink = "https://maps.google.com/?q=" + field.address;
-					document.getElementById("address1.1").setAttribute("href",strLink);
     }
 
    else{
