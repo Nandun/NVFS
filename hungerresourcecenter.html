@@ -125,8 +125,11 @@
             <div class="container text-center">
               <h3><center>Contact</center></h3>
               <font color="white">
-                <a id="address" href="#"><a id="address1.1" href="#"></a></a><br><br>
-                <strong>Food Assistance</strong><br><a id="phone1" href="#"></a><br><br>
+                <a id="address" href="#"><a id="address1.1" href="#"></a></a>
+		      <br><br>
+                <a id="name3"></a><br><a id="phone1" href="#"></a><br>
+		<a id="name4"></a><br> <a id="phone4" href-"#"></a>  
+		      <br><br>
 				
 				<a id="name1"></a><br>
 				<a id="title1"></a><br>
@@ -209,9 +212,14 @@
              }
 			 if(field.ID == 37){
 			      console.log(" Do I reach here");
+                    document.getElementById("name3").innerHTML = field.name;
+                    document.getElementById("name4").innerHTML = field.name2;
                     document.getElementById("phone1").innerHTML = field.phone;	
+                    document.getElementById("phone4").innerHTML = field.phone2;	
 					var strLink = "tel:" + field.phone;
-					document.getElementById("phone2").setAttribute("href",strLink);          
+					document.getElementById("phone1").setAttribute("href",strLink); 
+				 	var strLink = "tel:" + field.phone2;
+					document.getElementById("phone4").setAttribute("href",strLink);
 			 }
 			 		 if(field.ID == 38){
 			      console.log(" Do I reach here");
