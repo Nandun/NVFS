@@ -1,3 +1,3 @@
 # NVFS
 
-Located at https://github.com/Nandun/NVFS
+Located at http://nandun.github.io/NVFS
